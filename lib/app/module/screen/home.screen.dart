@@ -121,114 +121,195 @@ class _HomeScreenState extends State<HomeScreen> {
                     height: 15,
                   ),
                   Expanded(
-                    child: SingleChildScrollView(
-                      child: Column(
-                        children: [
-                          SizedBox(
-                            height: size.height * .25,
-                            width: double.infinity,
-                            child: Card(
-                              elevation: 3,
-                              color: Colors.white.withOpacity(.9),
-                            ),
-                          ),
-                          const SizedBox(
-                            height: 15,
-                          ),
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            crossAxisAlignment: CrossAxisAlignment.center,
-                            children: const [
-                              Text(
-                                'Recommendations',
-                                style: TextStyle(
-                                  fontSize: 17,
-                                  color: Color.fromRGBO(88, 88, 88, 1),
-                                  fontWeight: FontWeight.bold,
+                    child: CustomScrollView(
+                      slivers: [
+                        SliverList(
+                          delegate: SliverChildListDelegate(
+                            [
+                              SizedBox(
+                                height: size.height * .25,
+                                width: double.infinity,
+                                child: Card(
+                                  elevation: 3,
+                                  color: Colors.white.withOpacity(.9),
                                 ),
                               ),
-                              Text(
-                                'View All >',
-                                style: TextStyle(
-                                  fontSize: 13,
-                                  color: Colors.blue,
+                              const SizedBox(
+                                height: 15,
+                              ),
+                              Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                crossAxisAlignment: CrossAxisAlignment.center,
+                                children: const [
+                                  Text(
+                                    'Recommendations',
+                                    style: TextStyle(
+                                      fontSize: 17,
+                                      color: Color.fromRGBO(88, 88, 88, 1),
+                                      fontWeight: FontWeight.bold,
+                                    ),
+                                  ),
+                                  Text(
+                                    'View All >',
+                                    style: TextStyle(
+                                      fontSize: 13,
+                                      color: Colors.blue,
+                                    ),
+                                  )
+                                ],
+                              ),
+                              const SizedBox(
+                                height: 15,
+                              ),
+                              SizedBox(
+                                height: size.height * .25,
+                                width: double.infinity,
+                                child: ListView(
+                                  shrinkWrap: true,
+                                  scrollDirection: Axis.horizontal,
+                                  children: [
+                                    CardRecommendation(
+                                      height: 150,
+                                      width: size.width * .42,
+                                      label: 'Promo',
+                                    ),
+                                    const SizedBox(
+                                      width: 10,
+                                    ),
+                                    CardRecommendation(
+                                      height: 150,
+                                      width: size.width * .42,
+                                      label: 'Most Search',
+                                    ),
+                                    const SizedBox(
+                                      width: 10,
+                                    ),
+                                    CardRecommendation(
+                                      height: 150,
+                                      width: size.width * .42,
+                                      label: 'Another Card',
+                                    ),
+                                    const SizedBox(
+                                      width: 10,
+                                    ),
+                                  ],
+                                ),
+                              ),
+                              const SizedBox(
+                                height: 15,
+                              ),
+                              Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                crossAxisAlignment: CrossAxisAlignment.center,
+                                children: const [
+                                  Text(
+                                    'News and Updates',
+                                    style: TextStyle(
+                                      fontSize: 17,
+                                      color: Color.fromRGBO(88, 88, 88, 1),
+                                      fontWeight: FontWeight.bold,
+                                    ),
+                                  ),
+                                  Text(
+                                    'View All >',
+                                    style: TextStyle(
+                                      fontSize: 13,
+                                      color: Colors.blue,
+                                    ),
+                                  )
+                                ],
+                              ),
+                              const SizedBox(
+                                height: 15,
+                              ),
+                              const Card(
+                                elevation: 5,
+                                child: SizedBox(
+                                  width: double.infinity,
+                                  height: 175,
+                                ),
+                              ),
+                              const SizedBox(
+                                height: 20,
+                              ),
+                              Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                crossAxisAlignment: CrossAxisAlignment.center,
+                                children: const [
+                                  Text(
+                                    'Best Deals: LIMITED TIME OFFER',
+                                    style: TextStyle(
+                                      fontSize: 17,
+                                      color: Color.fromRGBO(88, 88, 88, 1),
+                                      fontWeight: FontWeight.bold,
+                                    ),
+                                  ),
+                                  Text(
+                                    'View All >',
+                                    style: TextStyle(
+                                      fontSize: 13,
+                                      color: Colors.blue,
+                                    ),
+                                  )
+                                ],
+                              ),
+                              const SizedBox(
+                                height: 5,
+                              ),
+                              Row(
+                                crossAxisAlignment: CrossAxisAlignment.center,
+                                children: const [
+                                  Text(
+                                    'Discount ends in',
+                                    style: TextStyle(
+                                      fontSize: 17,
+                                      color: Color.fromRGBO(88, 88, 88, 1),
+                                      fontWeight: FontWeight.w500,
+                                    ),
+                                  ),
+                                  SizedBox(
+                                    width: 10,
+                                  ),
+                                  DiscountTimer(),
+                                  SizedBox(
+                                    height: 10,
+                                  ),
+                                ],
+                              ),
+                              const SizedBox(
+                                height: 10,
+                              ),
+                              SizedBox(
+                                height: size.height * .5,
+                                child: GridView(
+                                  gridDelegate:
+                                      const SliverGridDelegateWithFixedCrossAxisCount(
+                                    crossAxisCount: 2,
+                                    crossAxisSpacing: 10,
+                                    mainAxisSpacing: 10,
+                                    childAspectRatio: 1.3,
+                                  ),
+                                  scrollDirection: Axis.horizontal,
+                                  children: const [
+                                    ItemCard(),
+                                    ItemCard(),
+                                    ItemCard(),
+                                    ItemCard(),
+                                    ItemCard(),
+                                    ItemCard(),
+                                    ItemCard(),
+                                    ItemCard(),
+                                    ItemCard(),
+                                  ],
                                 ),
                               )
                             ],
                           ),
-                          const SizedBox(
-                            height: 15,
-                          ),
-                          SizedBox(
-                            height: size.height * .25,
-                            width: double.infinity,
-                            child: ListView(
-                              shrinkWrap: true,
-                              scrollDirection: Axis.horizontal,
-                              children: [
-                                CardRecommendation(
-                                  height: 150,
-                                  width: size.width * .42,
-                                  label: 'Promo',
-                                ),
-                                const SizedBox(
-                                  width: 10,
-                                ),
-                                CardRecommendation(
-                                  height: 150,
-                                  width: size.width * .42,
-                                  label: 'Most Search',
-                                ),
-                                const SizedBox(
-                                  width: 10,
-                                ),
-                                CardRecommendation(
-                                  height: 150,
-                                  width: size.width * .42,
-                                  label: 'Another Card',
-                                ),
-                                const SizedBox(
-                                  width: 10,
-                                ),
-                              ],
-                            ),
-                          ),
-                          const SizedBox(
-                            height: 15,
-                          ),
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            crossAxisAlignment: CrossAxisAlignment.center,
-                            children: const [
-                              Text(
-                                'News and Updates',
-                                style: TextStyle(
-                                  fontSize: 17,
-                                  color: Color.fromRGBO(88, 88, 88, 1),
-                                  fontWeight: FontWeight.bold,
-                                ),
-                              ),
-                              Text(
-                                'View All >',
-                                style: TextStyle(
-                                  fontSize: 13,
-                                  color: Colors.blue,
-                                ),
-                              )
-                            ],
-                          ),
-                          const SizedBox(
-                            height: 15,
-                          ),
-                          const Card(
-                            elevation: 5,
-                            child: SizedBox(
-                              width: double.infinity,
-                              height: 175,
-                            ),
-                          )
-                        ],
-                      ),
+                        ),
+                      ],
                     ),
                   )
                 ],
