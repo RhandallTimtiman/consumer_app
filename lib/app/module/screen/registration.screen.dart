@@ -1,3 +1,5 @@
+import 'package:consumer_app/app/core/utilities/size.dart';
+import 'package:consumer_app/app/widget/widgets.dart';
 import 'package:flutter/material.dart';
 
 class RegistrationScreen extends StatefulWidget {
@@ -10,17 +12,82 @@ class RegistrationScreen extends StatefulWidget {
 class _RegistrationScreenState extends State<RegistrationScreen> {
   @override
   Widget build(BuildContext context) {
-    Size size = MediaQuery.of(context).size;
-    return SafeArea(
-      child: Scaffold(
-        body: Stack(
+    int currentIndex = 0;
+
+    changeStep(index) {
+      setState(() {
+        currentIndex = index;
+      });
+    }
+
+    return Scaffold(
+      body: SizedBox(
+        height: Screen.height(context),
+        child: Column(
           children: [
-            Image.asset(
-              'assets/images/ellipse_bg.png',
-              width: double.infinity,
-              fit: BoxFit.fill,
-              height: size.height * .25,
+            SizedBox(
+              height: Screen.height(context) * 0.3,
+              child: Stack(
+                children: [
+                  Image.asset(
+                    'assets/images/ellipse_bg.png',
+                    width: double.infinity,
+                    fit: BoxFit.fill,
+                    height: Screen.height(context) * .25,
+                  ),
+                  Positioned(
+                    top: 40,
+                    child: SizedBox(
+                      width: Screen.width(context),
+                      child: Column(
+                        children: const [
+                          Text(
+                            'Getting Started',
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontWeight: FontWeight.bold,
+                              fontSize: 25,
+                            ),
+                          ),
+                          Text(
+                            'Create an account for exciting features',
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 12,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                  Positioned(
+                    top: 140,
+                    child: SizedBox(
+                      width: Screen.width(context),
+                      child: Center(
+                        child: Material(
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(10000),
+                          ),
+                          elevation: 10,
+                          child: const CircleAvatar(
+                            backgroundColor: Colors.white,
+                            radius: 30,
+                            child: Icon(Icons.person),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
             ),
+            Expanded(
+              child: Container(
+                color: Colors.green.shade100,
+                child: const RegistrationUserDetails(),
+              ),
+            )
           ],
         ),
       ),
