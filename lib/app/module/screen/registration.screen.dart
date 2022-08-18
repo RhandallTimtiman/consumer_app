@@ -21,7 +21,8 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
     }
 
     return Scaffold(
-      body: SizedBox(
+      body: Container(
+        color: Colors.white,
         height: Screen.height(context),
         child: Column(
           children: [
@@ -69,7 +70,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(10000),
                           ),
-                          elevation: 10,
+                          elevation: 4,
                           child: const CircleAvatar(
                             backgroundColor: Colors.white,
                             radius: 30,
@@ -82,11 +83,8 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                 ],
               ),
             ),
-            Expanded(
-              child: Container(
-                color: Colors.green.shade100,
-                child: const RegistrationUserDetails(),
-              ),
+            const Expanded(
+              child: RegistrationAddressDetails(),
             )
           ],
         ),

@@ -1,1 +1,2 @@
-export 'registration_user_details.controller.dart';
+export 'registration_user.controller.dart';
+export 'registration_address.controller.dart';
