@@ -147,9 +147,9 @@ class _RegistrationAddressDetailsState
                 ),
                 const SizedBox(height: 15),
                 const InfoField(
-                  label: 'Additional Information',
+                  label: 'Additional Address Information (ie.bldg, etc)',
                   obscureText: false,
-                  hint: 'Enter additional information',
+                  hint: 'Enter additional information (optional)',
                   isEnabled: true,
                 ),
                 const SizedBox(

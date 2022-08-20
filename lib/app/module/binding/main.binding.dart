@@ -10,5 +10,8 @@ class MainBinding extends Bindings {
     Get.put(
       RegistrationAddressrController(),
     );
+    Get.put(
+      RegistrationAdditionalInfoController(),
+    );
   }
 }

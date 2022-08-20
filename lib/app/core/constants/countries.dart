@@ -1,5 +1,5 @@
 class Countries {
-  static List<String> country_list = [
+  static List<String> countryList = [
     "Afghanistan",
     "Albania",
     "Algeria",

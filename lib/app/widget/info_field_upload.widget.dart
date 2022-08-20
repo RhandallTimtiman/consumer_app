@@ -1,29 +1,38 @@
 import 'package:flutter/material.dart';
 
-class DateField extends StatefulWidget {
+class InfoFieldUpload extends StatefulWidget {
   final String label;
   final String? initialValue;
+  final bool obscureText;
   final String hint;
   final bool isEnabled;
   final IconData? prefixIcon;
+  final Widget? suffixWidget;
   final bool isPassword;
   final VoidCallback? callback;
-  const DateField({
+  final bool readonly;
+  final TextEditingController? controller;
+
+  const InfoFieldUpload({
     Key? key,
     required this.label,
     this.initialValue,
+    required this.obscureText,
     required this.hint,
     required this.isEnabled,
     this.prefixIcon,
     this.isPassword = false,
     this.callback,
+    this.suffixWidget,
+    this.readonly = false,
+    this.controller,
   }) : super(key: key);
 
   @override
-  State<DateField> createState() => _DateFieldState();
+  State<InfoFieldUpload> createState() => _InfoFieldUploadState();
 }
 
-class _DateFieldState extends State<DateField> {
+class _InfoFieldUploadState extends State<InfoFieldUpload> {
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -37,11 +46,10 @@ class _DateFieldState extends State<DateField> {
         ),
         TextFormField(
           textInputAction: TextInputAction.next,
-          initialValue: widget.initialValue,
           style: const TextStyle(
             fontSize: 12,
           ),
-          obscureText: false,
+          obscureText: widget.obscureText,
 
           // cursorColor: const Color.fromRGBO(
           //   73,
@@ -49,10 +57,13 @@ class _DateFieldState extends State<DateField> {
           //   61,
           //   1,
           // ),
-          readOnly: true,
-          onTap: widget.callback,
+          controller: widget.controller,
+          readOnly: widget.readonly,
           decoration: InputDecoration(
-            isDense: false,
+            isDense: widget.prefixIcon == null,
+            contentPadding: widget.prefixIcon == null
+                ? const EdgeInsets.only(top: 15, left: 45.0, bottom: 8)
+                : const EdgeInsets.only(top: 15, left: 20),
             counterText: "",
             filled: true,
             fillColor: Colors.white,
@@ -76,22 +87,12 @@ class _DateFieldState extends State<DateField> {
                     ),
                   )
                 : null,
-            suffixIcon: const Padding(
-              padding: EdgeInsets.symmetric(horizontal: 10),
-              child: IconTheme(
-                data: IconThemeData(
-                  color: Color.fromRGBO(
-                    73,
-                    130,
-                    61,
-                    1,
-                  ),
-                ),
-                child: Icon(Icons.calendar_month),
-              ),
+            prefixIconConstraints: const BoxConstraints(
+              maxHeight: 30,
             ),
+            suffixIcon: widget.suffixWidget,
           ),
-          // enabled: widget.isEnabled,
+          enabled: widget.isEnabled,
         ),
       ],
     );

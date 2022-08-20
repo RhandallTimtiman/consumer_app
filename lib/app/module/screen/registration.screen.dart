@@ -84,7 +84,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
               ),
             ),
             const Expanded(
-              child: RegistrationAddressDetails(),
+              child: AdditionalInformation(),
             )
           ],
         ),
