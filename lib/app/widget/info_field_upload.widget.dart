@@ -45,6 +45,11 @@ class _InfoFieldUploadState extends State<InfoFieldUpload> {
           ),
         ),
         TextFormField(
+          onTap: () {
+            if (widget.callback != null) {
+              widget.callback!();
+            }
+          },
           textInputAction: TextInputAction.next,
           style: const TextStyle(
             fontSize: 12,

@@ -12,6 +12,10 @@ class InfoField extends StatefulWidget {
   final VoidCallback? callback;
   final bool readonly;
   final TextEditingController? controller;
+  final String? errorText;
+  final bool isRequired;
+  final Function? validator;
+  final String? responseValidator;
 
   const InfoField({
     Key? key,
@@ -26,6 +30,10 @@ class InfoField extends StatefulWidget {
     this.suffixIcon,
     this.readonly = false,
     this.controller,
+    this.errorText,
+    this.isRequired = false,
+    this.validator,
+    this.responseValidator,
   }) : super(key: key);
 
   @override
@@ -50,7 +58,15 @@ class _InfoFieldState extends State<InfoField> {
             fontSize: 12,
           ),
           obscureText: widget.obscureText,
-
+          validator: (text) {
+            if (widget.isRequired && (text == null || text.isEmpty)) {
+              return 'This field is required';
+            }
+            if (widget.validator != null && widget.validator!(text)) {
+              return widget.responseValidator;
+            }
+            return null;
+          },
           // cursorColor: const Color.fromRGBO(
           //   73,
           //   130,
@@ -60,7 +76,6 @@ class _InfoFieldState extends State<InfoField> {
           controller: widget.controller,
           readOnly: widget.readonly,
           decoration: InputDecoration(
-            isDense: widget.prefixIcon == null,
             contentPadding: widget.prefixIcon == null
                 ? const EdgeInsets.only(top: 15, left: 45.0, bottom: 8)
                 : const EdgeInsets.only(top: 15, left: 20),

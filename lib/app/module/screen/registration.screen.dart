@@ -10,16 +10,11 @@ class RegistrationScreen extends StatefulWidget {
 }
 
 class _RegistrationScreenState extends State<RegistrationScreen> {
+  final PageController pageController = PageController(initialPage: 0);
+  int currentPageIndex = 0;
+
   @override
   Widget build(BuildContext context) {
-    int currentIndex = 0;
-
-    changeStep(index) {
-      setState(() {
-        currentIndex = index;
-      });
-    }
-
     return Scaffold(
       body: Container(
         color: Colors.white,
@@ -41,8 +36,8 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                     child: SizedBox(
                       width: Screen.width(context),
                       child: Column(
-                        children: const [
-                          Text(
+                        children: [
+                          const Text(
                             'Getting Started',
                             style: TextStyle(
                               color: Colors.white,
@@ -50,19 +45,138 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                               fontSize: 25,
                             ),
                           ),
-                          Text(
+                          const Text(
                             'Create an account for exciting features',
                             style: TextStyle(
                               color: Colors.white,
                               fontSize: 12,
                             ),
                           ),
+                          const SizedBox(
+                            height: 10,
+                          ),
+                          SizedBox(
+                            width: Screen.width(context) * 0.7,
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                              children: [
+                                GestureDetector(
+                                  onTap: () {
+                                    setState(() {
+                                      currentPageIndex = 0;
+                                    });
+                                    pageController.animateToPage(
+                                      0,
+                                      duration:
+                                          const Duration(milliseconds: 100),
+                                      curve: Curves.easeInOut,
+                                    );
+                                  },
+                                  child: Container(
+                                    decoration: BoxDecoration(
+                                      shape: BoxShape.circle,
+                                      border: Border.all(
+                                        width: 0.5,
+                                        color: Colors.white,
+                                      ),
+                                      color: currentPageIndex == 0
+                                          ? Colors.grey
+                                          : null,
+                                    ),
+                                    padding: const EdgeInsets.all(8),
+                                    child: const Text(
+                                      '1',
+                                      style: TextStyle(
+                                        color: Colors.white,
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                                Expanded(
+                                  child: Container(
+                                    height: 1,
+                                    color: Colors.white,
+                                  ),
+                                ),
+                                GestureDetector(
+                                  onTap: () {
+                                    setState(() {
+                                      currentPageIndex = 1;
+                                    });
+                                    pageController.animateToPage(
+                                      1,
+                                      duration:
+                                          const Duration(milliseconds: 100),
+                                      curve: Curves.easeInOut,
+                                    );
+                                  },
+                                  child: Container(
+                                    decoration: BoxDecoration(
+                                      shape: BoxShape.circle,
+                                      border: Border.all(
+                                        width: 1,
+                                        color: Colors.white,
+                                      ),
+                                      color: currentPageIndex == 1
+                                          ? Colors.grey
+                                          : null,
+                                    ),
+                                    padding: const EdgeInsets.all(8),
+                                    child: const Text(
+                                      '2',
+                                      style: TextStyle(
+                                        color: Colors.white,
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                                Expanded(
+                                  child: Container(
+                                    height: 1,
+                                    color: Colors.white,
+                                  ),
+                                ),
+                                GestureDetector(
+                                  onTap: () {
+                                    setState(() {
+                                      currentPageIndex = 2;
+                                    });
+                                    pageController.animateToPage(
+                                      2,
+                                      duration:
+                                          const Duration(milliseconds: 100),
+                                      curve: Curves.easeInOut,
+                                    );
+                                  },
+                                  child: Container(
+                                    decoration: BoxDecoration(
+                                      shape: BoxShape.circle,
+                                      border: Border.all(
+                                        width: 1,
+                                        color: Colors.white,
+                                      ),
+                                      color: currentPageIndex == 2
+                                          ? Colors.grey
+                                          : null,
+                                    ),
+                                    padding: const EdgeInsets.all(8),
+                                    child: const Text(
+                                      '3',
+                                      style: TextStyle(
+                                        color: Colors.white,
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          )
                         ],
                       ),
                     ),
                   ),
                   Positioned(
-                    top: 140,
+                    top: 145,
                     child: SizedBox(
                       width: Screen.width(context),
                       child: Center(
@@ -71,10 +185,24 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                             borderRadius: BorderRadius.circular(10000),
                           ),
                           elevation: 4,
-                          child: const CircleAvatar(
-                            backgroundColor: Colors.white,
-                            radius: 30,
-                            child: Icon(Icons.person),
+                          child: GestureDetector(
+                            onTap: () {
+                              debugPrint('tapped ${pageController.page}');
+                              if (pageController.page != 2.0) {
+                                pageController.nextPage(
+                                    duration: const Duration(milliseconds: 500),
+                                    curve: Curves.easeInOut);
+                              } else {
+                                pageController.previousPage(
+                                    duration: const Duration(milliseconds: 500),
+                                    curve: Curves.easeInOut);
+                              }
+                            },
+                            child: const CircleAvatar(
+                              backgroundColor: Colors.white,
+                              radius: 25,
+                              child: Icon(Icons.person),
+                            ),
                           ),
                         ),
                       ),
@@ -83,8 +211,16 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                 ],
               ),
             ),
-            const Expanded(
-              child: AdditionalInformation(),
+            Expanded(
+              child: PageView(
+                physics: const NeverScrollableScrollPhysics(),
+                controller: pageController,
+                children: const [
+                  RegistrationUserDetails(),
+                  RegistrationAddressDetails(),
+                  RegistrationAdditionalInformation(),
+                ],
+              ),
             )
           ],
         ),

@@ -6,7 +6,16 @@ import 'package:get/get.dart';
 class RegistrationAddressrController extends GetxController {
   List<String> countries = Countries.countryList;
 
+  final addressFormKey = GlobalKey<FormState>();
+
   TextEditingController countryController = TextEditingController();
+  TextEditingController regionController = TextEditingController();
+  TextEditingController stateController = TextEditingController();
+  TextEditingController cityController = TextEditingController();
+  TextEditingController barangayController = TextEditingController();
+  TextEditingController zipcodeController = TextEditingController();
+  TextEditingController mapAddressController = TextEditingController();
+  TextEditingController additionalAddressController = TextEditingController();
 
   showModalCountries() {
     Get.dialog(
@@ -34,5 +43,11 @@ class RegistrationAddressrController extends GetxController {
         ),
       ),
     );
+  }
+
+  validateNext(GlobalKey<FormState> formKey) {
+    if (formKey.currentState!.validate()) {
+      formKey.currentState!.save();
+    }
   }
 }
