@@ -1,10 +1,11 @@
+import 'package:consumer_app/app/core/utilities/size.dart';
 import 'package:flutter/material.dart';
 
 class InfoField extends StatefulWidget {
   final String label;
   final String? initialValue;
   final bool obscureText;
-  final String hint;
+  final String? hint;
   final bool isEnabled;
   final IconData? prefixIcon;
   final IconData? suffixIcon;
@@ -22,7 +23,7 @@ class InfoField extends StatefulWidget {
     required this.label,
     this.initialValue,
     required this.obscureText,
-    required this.hint,
+    this.hint,
     required this.isEnabled,
     this.prefixIcon,
     this.isPassword = false,
@@ -50,12 +51,14 @@ class _InfoFieldState extends State<InfoField> {
           widget.label,
           style: const TextStyle(
             fontSize: 11,
+            color: Colors.black,
           ),
         ),
         TextFormField(
           textInputAction: TextInputAction.next,
-          style: const TextStyle(
+          style: TextStyle(
             fontSize: 12,
+            color: Colors.grey.shade600,
           ),
           obscureText: widget.obscureText,
           validator: (text) {
@@ -76,13 +79,14 @@ class _InfoFieldState extends State<InfoField> {
           controller: widget.controller,
           readOnly: widget.readonly,
           decoration: InputDecoration(
+            isDense: widget.prefixIcon == null,
             contentPadding: widget.prefixIcon == null
-                ? const EdgeInsets.only(top: 15, left: 45.0, bottom: 8)
-                : const EdgeInsets.only(top: 15, left: 20),
+                ? const EdgeInsets.only(top: 10, left: 45.0, bottom: 8)
+                : const EdgeInsets.only(top: 10, left: 20),
             counterText: "",
             filled: true,
             fillColor: Colors.white,
-            hintText: widget.hint,
+            hintText: widget.hint ?? '',
             hintStyle: const TextStyle(
               fontSize: 11,
               color: Colors.grey,
@@ -93,17 +97,12 @@ class _InfoFieldState extends State<InfoField> {
                     child: Icon(
                       widget.prefixIcon,
                       // size: 20,
-                      color: const Color.fromRGBO(
-                        73,
-                        130,
-                        61,
-                        1,
-                      ),
+                      color: Theme.of(context).primaryColor,
                     ),
                   )
                 : null,
-            prefixIconConstraints: const BoxConstraints(
-              maxHeight: 30,
+            prefixIconConstraints: BoxConstraints(
+              maxHeight: Screen.height(context) * 0.02,
             ),
             suffixIcon: widget.isPassword
                 ? Padding(
@@ -111,13 +110,8 @@ class _InfoFieldState extends State<InfoField> {
                       horizontal: 10,
                     ),
                     child: IconTheme(
-                      data: const IconThemeData(
-                        color: Color.fromRGBO(
-                          73,
-                          130,
-                          61,
-                          1,
-                        ),
+                      data: IconThemeData(
+                        color: Theme.of(context).primaryColor,
                       ),
                       child: IconButton(
                         icon: Icon(

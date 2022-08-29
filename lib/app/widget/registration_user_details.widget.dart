@@ -1,7 +1,6 @@
 import 'dart:developer';
 
 import 'package:consumer_app/app/core/utilities/size.dart';
-import 'package:consumer_app/app/core/utilities/validators.dart';
 import 'package:consumer_app/app/data/controller/controller.dart';
 import 'package:consumer_app/app/widget/widgets.dart';
 import 'package:flutter/material.dart';
@@ -26,12 +25,7 @@ class _RegistrationUserDetailsState extends State<RegistrationUserDetails> {
       MaterialState.selected,
     };
     if (states.any(interactiveStates.contains)) {
-      return const Color.fromRGBO(
-        73,
-        130,
-        61,
-        1,
-      );
+      return Theme.of(context).primaryColor;
     }
     return const Color.fromRGBO(
       73,
@@ -228,14 +222,7 @@ class _RegistrationUserDetailsState extends State<RegistrationUserDetails> {
                     },
                     checkColor: Colors.white,
                     fillColor: MaterialStateProperty.resolveWith(getColor),
-                    side: const BorderSide(
-                      color: Color.fromRGBO(
-                        73,
-                        130,
-                        61,
-                        1,
-                      ),
-                    ),
+                    side: BorderSide(color: Theme.of(context).primaryColor),
                   ),
                   const SizedBox(
                     width: 5,
@@ -270,12 +257,7 @@ class _RegistrationUserDetailsState extends State<RegistrationUserDetails> {
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(10),
                     ),
-                    color: const Color.fromRGBO(
-                      73,
-                      130,
-                      61,
-                      1,
-                    ),
+                    color: Theme.of(context).primaryColor,
                     minWidth: double.infinity,
                     onPressed: () {
                       Get.find<RegistrationUserController>().validateNext(

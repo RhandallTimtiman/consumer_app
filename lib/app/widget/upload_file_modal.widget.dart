@@ -128,14 +128,9 @@ class _UploadFileModalState extends State<UploadFileModal> {
                             ),
                             height: Screen.height(context) * 0.3,
                             width: Screen.width(context) * 0.2,
-                            child: const Icon(
+                            child: Icon(
                               FontAwesomeIcons.camera,
-                              color: Color.fromRGBO(
-                                73,
-                                130,
-                                61,
-                                1,
-                              ),
+                              color: Theme.of(context).primaryColor,
                             ),
                           ),
                         ),
@@ -148,14 +143,9 @@ class _UploadFileModalState extends State<UploadFileModal> {
                             ),
                             height: Screen.height(context) * 0.3,
                             width: Screen.width(context) * 0.2,
-                            child: const Icon(
+                            child: Icon(
                               Icons.upload,
-                              color: Color.fromRGBO(
-                                73,
-                                130,
-                                61,
-                                1,
-                              ),
+                              color: Theme.of(context).primaryColor,
                             ),
                           ),
                         ),

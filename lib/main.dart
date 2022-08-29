@@ -1,3 +1,4 @@
+import 'package:consumer_app/app/core/constants/themes/themes.dart';
 import 'package:consumer_app/app/module/binding/binding.dart';
 import 'package:consumer_app/app/module/screen/screen.dart';
 import 'package:flutter/material.dart';
@@ -15,11 +16,8 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetMaterialApp(
       title: 'Flutter Demo',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-        fontFamily: 'Poppins',
-      ),
-      home: const RegistrationScreen(),
+      theme: AppTheme().light,
+      home: const ProfileScreen(),
       debugShowCheckedModeBanner: false,
       initialBinding: MainBinding(),
     );

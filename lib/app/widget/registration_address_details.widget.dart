@@ -197,12 +197,7 @@ class _RegistrationAddressDetailsState
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(10),
                       ),
-                      color: const Color.fromRGBO(
-                        73,
-                        130,
-                        61,
-                        1,
-                      ),
+                      color: Theme.of(context).primaryColor,
                       onPressed: () {
                         Get.find<RegistrationAddressrController>().validateNext(
                             Get.find<RegistrationAddressrController>()

@@ -1,3 +1,4 @@
+import 'package:consumer_app/app/core/utilities/size.dart';
 import 'package:flutter/material.dart';
 
 class DateField extends StatefulWidget {
@@ -8,6 +9,7 @@ class DateField extends StatefulWidget {
   final IconData? prefixIcon;
   final bool isPassword;
   final VoidCallback? callback;
+  final TextEditingController? controller;
   const DateField({
     Key? key,
     required this.label,
@@ -17,6 +19,7 @@ class DateField extends StatefulWidget {
     this.prefixIcon,
     this.isPassword = false,
     this.callback,
+    this.controller,
   }) : super(key: key);
 
   @override
@@ -33,13 +36,15 @@ class _DateFieldState extends State<DateField> {
           widget.label,
           style: const TextStyle(
             fontSize: 11,
+            color: Colors.black,
           ),
         ),
         TextFormField(
           textInputAction: TextInputAction.next,
           initialValue: widget.initialValue,
-          style: const TextStyle(
+          style: TextStyle(
             fontSize: 12,
+            color: Colors.grey.shade600,
           ),
           obscureText: false,
 
@@ -50,9 +55,13 @@ class _DateFieldState extends State<DateField> {
           //   1,
           // ),
           readOnly: true,
+          controller: widget.controller,
           onTap: widget.callback,
           decoration: InputDecoration(
-            isDense: false,
+            isDense: widget.prefixIcon == null,
+            contentPadding: widget.prefixIcon == null
+                ? const EdgeInsets.only(top: 10, left: 45.0, bottom: 8)
+                : const EdgeInsets.only(top: 10, left: 20),
             counterText: "",
             filled: true,
             fillColor: Colors.white,
@@ -67,31 +76,26 @@ class _DateFieldState extends State<DateField> {
                     child: Icon(
                       widget.prefixIcon,
                       // size: 20,
-                      color: const Color.fromRGBO(
-                        73,
-                        130,
-                        61,
-                        1,
-                      ),
+                      color: Theme.of(context).primaryColor,
                     ),
                   )
                 : null,
-            suffixIcon: const Padding(
-              padding: EdgeInsets.symmetric(horizontal: 10),
-              child: IconTheme(
-                data: IconThemeData(
-                  color: Color.fromRGBO(
-                    73,
-                    130,
-                    61,
-                    1,
-                  ),
-                ),
-                child: Icon(Icons.calendar_month),
-              ),
+            prefixIconConstraints: BoxConstraints(
+              maxHeight: Screen.height(context) * 0.02,
             ),
+            suffixIcon: widget.isEnabled
+                ? Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 10),
+                    child: IconTheme(
+                      data: IconThemeData(
+                        color: Theme.of(context).primaryColor,
+                      ),
+                      child: const Icon(Icons.calendar_month),
+                    ),
+                  )
+                : null,
           ),
-          // enabled: widget.isEnabled,
+          enabled: widget.isEnabled,
         ),
       ],
     );

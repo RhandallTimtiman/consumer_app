@@ -4,7 +4,6 @@ import 'package:consumer_app/app/widget/widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
-import 'package:url_launcher/url_launcher.dart';
 
 class RegistrationAdditionalInformation extends StatefulWidget {
   const RegistrationAdditionalInformation({Key? key}) : super(key: key);
@@ -56,19 +55,9 @@ class _RegistrationAdditionalInformationState
       MaterialState.selected,
     };
     if (states.any(interactiveStates.contains)) {
-      return const Color.fromRGBO(
-        73,
-        130,
-        61,
-        1,
-      );
+      return Theme.of(context).primaryColor;
     }
-    return const Color.fromRGBO(
-      73,
-      130,
-      61,
-      1,
-    );
+    return Theme.of(context).primaryColor;
   }
 
   @override
@@ -174,13 +163,8 @@ class _RegistrationAdditionalInformationState
                             checkColor: Colors.white,
                             fillColor:
                                 MaterialStateProperty.resolveWith(getColor),
-                            side: const BorderSide(
-                              color: Color.fromRGBO(
-                                73,
-                                130,
-                                61,
-                                1,
-                              ),
+                            side: BorderSide(
+                              color: Theme.of(context).primaryColor,
                             ),
                           ),
                         ),
@@ -328,13 +312,8 @@ class _RegistrationAdditionalInformationState
                             checkColor: Colors.white,
                             fillColor:
                                 MaterialStateProperty.resolveWith(getColor),
-                            side: const BorderSide(
-                              color: Color.fromRGBO(
-                                73,
-                                130,
-                                61,
-                                1,
-                              ),
+                            side: BorderSide(
+                              color: Theme.of(context).primaryColor,
                             ),
                           ),
                         ),
@@ -398,12 +377,8 @@ class _RegistrationAdditionalInformationState
                                         SizedBox(
                                           height: Screen.height(context) * 0.04,
                                           child: MaterialButton(
-                                            color: const Color.fromRGBO(
-                                              73,
-                                              130,
-                                              61,
-                                              1,
-                                            ),
+                                            color:
+                                                Theme.of(context).primaryColor,
                                             height:
                                                 Screen.height(context) * 0.04,
                                             minWidth:
@@ -483,12 +458,7 @@ class _RegistrationAdditionalInformationState
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(10),
                         ),
-                        color: const Color.fromRGBO(
-                          73,
-                          130,
-                          61,
-                          1,
-                        ),
+                        color: Theme.of(context).primaryColor,
                         onPressed: () {},
                         child: const Text(
                           'Submit',
