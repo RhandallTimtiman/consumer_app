@@ -58,7 +58,7 @@ class _InfoFieldState extends State<InfoField> {
           textInputAction: TextInputAction.next,
           style: TextStyle(
             fontSize: 12,
-            color: Colors.grey.shade600,
+            color: widget.isEnabled ? Colors.black : Colors.grey.shade600,
           ),
           obscureText: widget.obscureText,
           validator: (text) {
@@ -77,6 +77,8 @@ class _InfoFieldState extends State<InfoField> {
           //   1,
           // ),
           controller: widget.controller,
+          minLines: 1,
+          maxLines: 2,
           readOnly: widget.readonly,
           decoration: InputDecoration(
             isDense: widget.prefixIcon == null,
@@ -123,7 +125,7 @@ class _InfoFieldState extends State<InfoField> {
                       ),
                     ),
                   )
-                : widget.suffixIcon != null
+                : widget.isEnabled && widget.suffixIcon != null
                     ? IconButton(
                         icon: Icon(
                           widget.suffixIcon,
@@ -131,6 +133,9 @@ class _InfoFieldState extends State<InfoField> {
                         onPressed: widget.callback,
                       )
                     : null,
+            suffixIconConstraints: BoxConstraints(
+              maxHeight: Screen.height(context) * 0.02,
+            ),
           ),
           enabled: widget.isEnabled,
         ),

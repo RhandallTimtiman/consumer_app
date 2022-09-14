@@ -42,6 +42,7 @@ class _InfoFieldUploadState extends State<InfoFieldUpload> {
           widget.label,
           style: const TextStyle(
             fontSize: 11,
+            color: Colors.black,
           ),
         ),
         TextFormField(
@@ -51,8 +52,9 @@ class _InfoFieldUploadState extends State<InfoFieldUpload> {
             }
           },
           textInputAction: TextInputAction.next,
-          style: const TextStyle(
+          style: TextStyle(
             fontSize: 12,
+            color: widget.isEnabled ? Colors.black : Colors.grey.shade600,
           ),
           obscureText: widget.obscureText,
 

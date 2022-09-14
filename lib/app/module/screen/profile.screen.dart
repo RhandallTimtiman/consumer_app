@@ -1,6 +1,8 @@
 import 'package:consumer_app/app/core/utilities/size.dart';
+import 'package:consumer_app/app/data/controller/controller.dart';
 import 'package:consumer_app/app/widget/widgets.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class ProfileScreen extends StatefulWidget {
   const ProfileScreen({Key? key}) : super(key: key);
@@ -19,7 +21,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
         child: Column(
           children: [
             SizedBox(
-              height: Screen.height(context) * 0.3,
+              height: Screen.height(context) * 0.27,
               child: Stack(
                 children: [
                   Image.asset(
@@ -86,8 +88,57 @@ class _ProfileScreenState extends State<ProfileScreen> {
                 child: Column(
                   children: const [
                     ProfileUserDetails(),
+                    ProfileAddressDetails(),
+                    ProfileAdditionalInfo()
                   ],
                 ),
+              ),
+            ),
+            Container(
+              padding: const EdgeInsets.all(8),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Expanded(
+                    child: MaterialButton(
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(10),
+                      ),
+                      color: Colors.grey,
+                      onPressed: () {},
+                      child: const Text(
+                        'Back',
+                        style: TextStyle(
+                          color: Colors.white,
+                        ),
+                      ),
+                    ),
+                  ),
+                  const SizedBox(
+                    width: 10,
+                  ),
+                  Obx(
+                    () => Expanded(
+                      child: MaterialButton(
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(10),
+                        ),
+                        color: Theme.of(context).primaryColor,
+                        onPressed: () {
+                          Get.find<ProfileController>().toggleEdit();
+                        },
+                        child: Text(
+                          Get.find<ProfileController>().isEdit.value
+                              ? 'Submit'
+                              : 'Edit',
+                          style: const TextStyle(
+                            color: Colors.white,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                ],
               ),
             )
           ],

@@ -84,7 +84,7 @@ class _RegistrationAdditionalInformationState
               Container(
                 padding: const EdgeInsets.symmetric(horizontal: 18),
                 child: const Text(
-                  'Address Details',
+                  'Additional Information',
                   style: TextStyle(
                     fontWeight: FontWeight.bold,
                   ),

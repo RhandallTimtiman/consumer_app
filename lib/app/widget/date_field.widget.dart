@@ -94,6 +94,9 @@ class _DateFieldState extends State<DateField> {
                     ),
                   )
                 : null,
+            suffixIconConstraints: BoxConstraints(
+              maxHeight: Screen.height(context) * 0.02,
+            ),
           ),
           enabled: widget.isEnabled,
         ),

@@ -11,6 +11,7 @@ ThemeData _theme(ThemeColors color) => ThemeData.light().copyWith(
       primaryColor: color.primary,
       scaffoldBackgroundColor: color.mainBackground,
       backgroundColor: color.mainBackground,
+      primaryTextTheme: TextTheme(),
       textTheme: TextTheme(
         headline6: TextStyle(
           color: color.primary,
@@ -30,6 +31,11 @@ ThemeData _theme(ThemeColors color) => ThemeData.light().copyWith(
         ),
         headline3: const TextStyle(
           fontSize: 18,
+          fontFamily: 'Poppins',
+          fontWeight: FontWeight.bold,
+        ),
+        headline2: const TextStyle(
+          fontSize: 16,
           fontFamily: 'Poppins',
           fontWeight: FontWeight.bold,
         ),

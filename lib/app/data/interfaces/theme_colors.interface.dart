@@ -6,6 +6,7 @@ abstract class ThemeColors {
     required this.secondary,
     required this.background,
     required this.mainBackground,
+    required this.primaryTextColor,
   });
 
   Color primary;
@@ -16,4 +17,5 @@ abstract class ThemeColors {
 
   Color white = const Color(0xffffffff);
   Color lightGray = const Color(0xffa9a9a9);
+  Color primaryTextColor = Colors.black;
 }

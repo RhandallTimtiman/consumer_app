@@ -27,6 +27,7 @@ class LightColors extends ThemeColors {
           secondary: const Color(0xFF696969),
           background: const Color(0xffF2F2F2),
           mainBackground: Colors.white,
+          primaryTextColor: Colors.black,
         );
 }
 
@@ -45,5 +46,6 @@ class DarkColors extends ThemeColors {
           mainBackground: const Color(
             0xFF2d2d2d,
           ),
+          primaryTextColor: Colors.white,
         );
 }
