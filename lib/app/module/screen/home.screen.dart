@@ -1,5 +1,7 @@
+import 'package:consumer_app/app/module/screen/screen.dart';
 import 'package:consumer_app/app/widget/widgets.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -141,8 +143,8 @@ class _HomeScreenState extends State<HomeScreen> {
                                 mainAxisAlignment:
                                     MainAxisAlignment.spaceBetween,
                                 crossAxisAlignment: CrossAxisAlignment.center,
-                                children: const [
-                                  Text(
+                                children: [
+                                  const Text(
                                     'Recommendations',
                                     style: TextStyle(
                                       fontSize: 17,
@@ -150,11 +152,15 @@ class _HomeScreenState extends State<HomeScreen> {
                                       fontWeight: FontWeight.bold,
                                     ),
                                   ),
-                                  Text(
-                                    'View All >',
-                                    style: TextStyle(
-                                      fontSize: 13,
-                                      color: Colors.blue,
+                                  InkWell(
+                                    onTap: () =>
+                                        Get.to(() => const CategoryScreen()),
+                                    child: const Text(
+                                      'View All >',
+                                      style: TextStyle(
+                                        fontSize: 13,
+                                        color: Colors.blue,
+                                      ),
                                     ),
                                   )
                                 ],
