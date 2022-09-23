@@ -11,7 +11,6 @@ ThemeData _theme(ThemeColors color) => ThemeData.light().copyWith(
       primaryColor: color.primary,
       scaffoldBackgroundColor: color.mainBackground,
       backgroundColor: color.mainBackground,
-      primaryTextTheme: TextTheme(),
       textTheme: TextTheme(
         headline6: TextStyle(
           color: color.primary,

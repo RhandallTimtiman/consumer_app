@@ -11,6 +11,11 @@ class RegistrationScreen extends StatefulWidget {
 
 class _RegistrationScreenState extends State<RegistrationScreen> {
   final PageController pageController = PageController(initialPage: 0);
+  List<GlobalKey<FormState>> formKeys = [
+    GlobalKey<FormState>(),
+    GlobalKey<FormState>(),
+    GlobalKey<FormState>(),
+  ];
   int currentPageIndex = 0;
 
   @override
@@ -215,10 +220,16 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
               child: PageView(
                 physics: const NeverScrollableScrollPhysics(),
                 controller: pageController,
-                children: const [
-                  RegistrationUserDetails(),
-                  RegistrationAddressDetails(),
-                  RegistrationAdditionalInformation(),
+                children: [
+                  RegistrationUserDetails(
+                    formKey: formKeys[0],
+                  ),
+                  RegistrationAddressDetails(
+                    formKey: formKeys[1],
+                  ),
+                  RegistrationAdditionalInformation(
+                    formKey: formKeys[2],
+                  ),
                 ],
               ),
             )

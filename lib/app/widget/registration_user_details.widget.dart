@@ -7,7 +7,11 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class RegistrationUserDetails extends StatefulWidget {
-  const RegistrationUserDetails({Key? key}) : super(key: key);
+  final GlobalKey<FormState> formKey;
+  const RegistrationUserDetails({
+    Key? key,
+    required this.formKey,
+  }) : super(key: key);
 
   @override
   State<RegistrationUserDetails> createState() =>
@@ -62,7 +66,7 @@ class _RegistrationUserDetailsState extends State<RegistrationUserDetails> {
       padding: const EdgeInsets.all(12),
       child: SingleChildScrollView(
         child: Form(
-          key: Get.find<RegistrationUserController>().userFormKey,
+          key: widget.formKey,
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -260,8 +264,8 @@ class _RegistrationUserDetailsState extends State<RegistrationUserDetails> {
                     color: Theme.of(context).primaryColor,
                     minWidth: double.infinity,
                     onPressed: () {
-                      Get.find<RegistrationUserController>().validateNext(
-                          Get.find<RegistrationUserController>().userFormKey);
+                      Get.find<RegistrationUserController>()
+                          .validateNext(widget.formKey);
                     },
                     child: const Text(
                       'Next',

@@ -89,6 +89,7 @@ class _UploadFileModalState extends State<UploadFileModal> {
                     'Upload File',
                     style: TextStyle(
                       fontSize: 20,
+                      color: Colors.black,
                     ),
                   ),
                   GestureDetector(
@@ -111,6 +112,7 @@ class _UploadFileModalState extends State<UploadFileModal> {
                     width: 0.5,
                     color: Colors.grey,
                   ),
+                  color: Colors.grey.shade100,
                 ),
                 width: double.infinity,
                 child: Column(
@@ -155,6 +157,7 @@ class _UploadFileModalState extends State<UploadFileModal> {
                       'Take a Photo or Upload File',
                       style: TextStyle(
                         fontSize: 12,
+                        color: Colors.black,
                       ),
                     )
                   ],

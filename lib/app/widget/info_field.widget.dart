@@ -78,7 +78,7 @@ class _InfoFieldState extends State<InfoField> {
           // ),
           controller: widget.controller,
           minLines: 1,
-          maxLines: 2,
+          maxLines: widget.obscureText ? 1 : 2,
           readOnly: widget.readonly,
           decoration: InputDecoration(
             isDense: widget.prefixIcon == null,

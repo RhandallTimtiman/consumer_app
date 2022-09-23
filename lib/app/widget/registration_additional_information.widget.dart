@@ -6,7 +6,11 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
 
 class RegistrationAdditionalInformation extends StatefulWidget {
-  const RegistrationAdditionalInformation({Key? key}) : super(key: key);
+  final GlobalKey<FormState> formKey;
+  const RegistrationAdditionalInformation({
+    Key? key,
+    required this.formKey,
+  }) : super(key: key);
 
   @override
   State<RegistrationAdditionalInformation> createState() =>
@@ -63,7 +67,7 @@ class _RegistrationAdditionalInformationState
   @override
   void initState() {
     WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
-      Get.find<RegistrationAdditionalInfoController>().openNotification();
+      // Get.find<RegistrationAdditionalInfoController>().openNotification();
     });
     super.initState();
   }
@@ -76,8 +80,7 @@ class _RegistrationAdditionalInformationState
       padding: const EdgeInsets.symmetric(vertical: 12),
       child: SingleChildScrollView(
         child: Form(
-          key: Get.find<RegistrationAdditionalInfoController>()
-              .additionalInfoFormKey,
+          key: widget.formKey,
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -87,6 +90,7 @@ class _RegistrationAdditionalInformationState
                   'Additional Information',
                   style: TextStyle(
                     fontWeight: FontWeight.bold,
+                    // color: Colors.black,
                   ),
                 ),
               ),
@@ -102,6 +106,7 @@ class _RegistrationAdditionalInformationState
                       'Tax Number',
                       style: TextStyle(
                         fontWeight: FontWeight.bold,
+                        color: Colors.black,
                       ),
                     ),
                     const SizedBox(
@@ -141,6 +146,7 @@ class _RegistrationAdditionalInformationState
                       'Senior Citizen',
                       style: TextStyle(
                         fontWeight: FontWeight.bold,
+                        color: Colors.black,
                       ),
                     ),
                     SizedBox(
@@ -149,7 +155,12 @@ class _RegistrationAdditionalInformationState
                     Row(
                       children: [
                         const Expanded(
-                          child: Text('Are you a Senior Citizen?'),
+                          child: Text(
+                            'Are you a Senior Citizen?',
+                            style: TextStyle(
+                              color: Colors.black,
+                            ),
+                          ),
                         ),
                         // SizedBox(
                         //   width: Screen.width(context) * 0.1,
@@ -293,12 +304,18 @@ class _RegistrationAdditionalInformationState
                       'Person With Disabilities (PWD)',
                       style: TextStyle(
                         fontWeight: FontWeight.bold,
+                        color: Colors.black,
                       ),
                     ),
                     Row(
                       children: [
                         const Expanded(
-                          child: Text('Are you a PWD?'),
+                          child: Text(
+                            'Are you a PWD?',
+                            style: TextStyle(
+                              color: Colors.black,
+                            ),
+                          ),
                         ),
                         // SizedBox(
                         //   width: Screen.width(context) * 0.1,

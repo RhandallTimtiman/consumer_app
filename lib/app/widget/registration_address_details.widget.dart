@@ -6,7 +6,11 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
 
 class RegistrationAddressDetails extends StatefulWidget {
-  const RegistrationAddressDetails({Key? key}) : super(key: key);
+  final GlobalKey<FormState> formKey;
+  const RegistrationAddressDetails({
+    Key? key,
+    required this.formKey,
+  }) : super(key: key);
 
   @override
   State<RegistrationAddressDetails> createState() =>
@@ -47,7 +51,7 @@ class _RegistrationAddressDetailsState
       padding: const EdgeInsets.all(12),
       child: SingleChildScrollView(
         child: Form(
-          key: Get.find<RegistrationAddressrController>().addressFormKey,
+          key: widget.formKey,
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -199,9 +203,8 @@ class _RegistrationAddressDetailsState
                       ),
                       color: Theme.of(context).primaryColor,
                       onPressed: () {
-                        Get.find<RegistrationAddressrController>().validateNext(
-                            Get.find<RegistrationAddressrController>()
-                                .addressFormKey);
+                        Get.find<RegistrationAddressrController>()
+                            .validateNext(widget.formKey);
                       },
                       child: const Text(
                         'Next',
