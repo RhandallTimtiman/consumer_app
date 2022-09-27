@@ -1,11 +1,8 @@
-import 'dart:developer';
-import 'dart:io';
-
 import 'package:consumer_app/app/core/utilities/size.dart';
+import 'package:consumer_app/app/data/controller/controller.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
-import 'package:image_cropper/image_cropper.dart';
 import 'package:image_picker/image_picker.dart';
 
 class UploadFileModal extends StatefulWidget {
@@ -21,55 +18,6 @@ class UploadFileModal extends StatefulWidget {
 
 class _UploadFileModalState extends State<UploadFileModal> {
   final picker = ImagePicker();
-
-  Future captureImage() async {
-    final pickedFile =
-        await picker.pickImage(source: ImageSource.camera, imageQuality: 20);
-    if (pickedFile != null) {
-      CroppedFile? croppedFile = await cropCustomImage(File(pickedFile.path));
-      if (croppedFile != null) {
-        widget.callback(croppedFile);
-      }
-    }
-  }
-
-  Future getImageFromFiles() async {
-    final pickedFile =
-        await picker.pickImage(source: ImageSource.gallery, imageQuality: 20);
-    if (pickedFile != null) {
-      CroppedFile? croppedFile = await cropCustomImage(File(pickedFile.path));
-      inspect(croppedFile);
-      if (croppedFile != null) {
-        widget.callback(croppedFile);
-      }
-      // Get.back();
-    }
-  }
-
-  Future<CroppedFile?> cropCustomImage(File imagefile) async {
-    return await ImageCropper().cropImage(
-      aspectRatio: const CropAspectRatio(ratioX: 16, ratioY: 9),
-      sourcePath: imagefile.path,
-      aspectRatioPresets: [
-        CropAspectRatioPreset.square,
-      ],
-      compressFormat: ImageCompressFormat.png,
-      uiSettings: [
-        AndroidUiSettings(
-          toolbarColor: Colors.black,
-          toolbarTitle: 'Senior Citizen Id',
-          toolbarWidgetColor: Colors.white,
-          hideBottomControls: true,
-          lockAspectRatio: true,
-          showCropGrid: false,
-        ),
-        IOSUiSettings(
-          rotateButtonsHidden: true,
-          rotateClockwiseButtonHidden: true,
-        ),
-      ],
-    );
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -122,7 +70,8 @@ class _UploadFileModalState extends State<UploadFileModal> {
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
                         GestureDetector(
-                          onTap: () => captureImage(),
+                          onTap: () =>
+                              Get.find<RegistrationController>().captureImage(),
                           child: Container(
                             decoration: BoxDecoration(
                               shape: BoxShape.circle,
@@ -137,7 +86,8 @@ class _UploadFileModalState extends State<UploadFileModal> {
                           ),
                         ),
                         GestureDetector(
-                          onTap: () => getImageFromFiles(),
+                          onTap: () => Get.find<RegistrationController>()
+                              .getImageFromFiles(),
                           child: Container(
                             decoration: BoxDecoration(
                               shape: BoxShape.circle,

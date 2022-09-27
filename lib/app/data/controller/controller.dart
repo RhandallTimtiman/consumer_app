@@ -5,5 +5,5 @@ export 'profile.controller.dart';
 export 'family_contact.controller.dart';
 export 'main.controller.dart';
 export 'registration.controller.dart';
-// export 'registration_user_details.controller.dart';
+export 'registration_user_details.controller.dart';
 export 'category.controller.dart';

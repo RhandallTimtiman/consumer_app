@@ -8,7 +8,7 @@ class MainBinding extends Bindings {
       MainController(),
     );
     Get.put(
-      RegistrationUserController(),
+      RegistrationController(),
     );
     Get.put(
       CategoryController(),

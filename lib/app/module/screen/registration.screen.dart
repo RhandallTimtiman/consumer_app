@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:consumer_app/app/core/utilities/size.dart';
 import 'package:consumer_app/app/data/controller/controller.dart';
 import 'package:consumer_app/app/widget/widgets.dart';
@@ -194,13 +196,34 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                           elevation: 4,
                           child: GestureDetector(
                             onTap: () {
-                              Get.find<RegistrationController>()
-                                  .showProfileModal();
+                              // Get.find<RegistrationController>()
+                              //     .showProfileModal();
+                              Get.to(
+                                const UploadProfile(),
+                              );
                             },
-                            child: const CircleAvatar(
-                              backgroundColor: Colors.white,
-                              radius: 25,
-                              child: Icon(Icons.person),
+                            child: GetBuilder<RegistrationController>(
+                              builder: (_) {
+                                if (_.profileImage == null) {
+                                  return const CircleAvatar(
+                                    backgroundColor: Colors.white,
+                                    radius: 25,
+                                    child: Icon(Icons.person),
+                                  );
+                                }
+                                return Container(
+                                  height: Screen.height(context) * 0.07,
+                                  width: Screen.width(context) * 0.12,
+                                  decoration: BoxDecoration(
+                                    image: DecorationImage(
+                                      image: FileImage(
+                                        File(_.profileImage?.path ?? ''),
+                                      ),
+                                    ),
+                                    shape: BoxShape.circle,
+                                  ),
+                                );
+                              },
                             ),
                           ),
                         ),
