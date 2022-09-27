@@ -5,6 +5,9 @@ class RegistrationBinding extends Bindings {
   @override
   void dependencies() {
     Get.lazyPut(
+      () => RegistrationController(),
+    );
+    Get.lazyPut(
       () => RegistrationUserController(),
     );
     Get.lazyPut(

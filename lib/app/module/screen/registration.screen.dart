@@ -1,6 +1,8 @@
 import 'package:consumer_app/app/core/utilities/size.dart';
+import 'package:consumer_app/app/data/controller/controller.dart';
 import 'package:consumer_app/app/widget/widgets.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class RegistrationScreen extends StatefulWidget {
   const RegistrationScreen({Key? key}) : super(key: key);
@@ -192,16 +194,8 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                           elevation: 4,
                           child: GestureDetector(
                             onTap: () {
-                              debugPrint('tapped ${pageController.page}');
-                              if (pageController.page != 2.0) {
-                                pageController.nextPage(
-                                    duration: const Duration(milliseconds: 500),
-                                    curve: Curves.easeInOut);
-                              } else {
-                                pageController.previousPage(
-                                    duration: const Duration(milliseconds: 500),
-                                    curve: Curves.easeInOut);
-                              }
+                              Get.find<RegistrationController>()
+                                  .showProfileModal();
                             },
                             child: const CircleAvatar(
                               backgroundColor: Colors.white,

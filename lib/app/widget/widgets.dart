@@ -12,3 +12,4 @@ export 'notification_modal.widget.dart';
 export 'profile_user_details.widget.dart';
 export 'profile_address_details.widget.dart';
 export 'profile_additional_information.widget.dart';
+export 'profile_modal.widget.dart';
