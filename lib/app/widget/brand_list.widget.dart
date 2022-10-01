@@ -1,4 +1,6 @@
+import 'package:consumer_app/app/data/controller/category.controller.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class BrandList extends StatelessWidget {
   const BrandList({Key? key}) : super(key: key);
@@ -54,13 +56,18 @@ class BrandList extends StatelessWidget {
               ),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.end,
-                children: const [
-                  Text(
-                    'A - Z',
-                    style: TextStyle(
-                      fontSize: 20,
-                      fontWeight: FontWeight.bold,
-                      color: Color.fromRGBO(151, 151, 151, 1),
+                children: [
+                  InkWell(
+                    onTap: () {
+                      Get.find<CategoryController>().searchBrand(context);
+                    },
+                    child: const Text(
+                      'A - Z',
+                      style: TextStyle(
+                        fontSize: 20,
+                        fontWeight: FontWeight.bold,
+                        color: Color.fromRGBO(151, 151, 151, 1),
+                      ),
                     ),
                   ),
                 ],

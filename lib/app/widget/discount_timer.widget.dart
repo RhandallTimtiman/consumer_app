@@ -15,7 +15,6 @@ class _DiscountTimerState extends State<DiscountTimer> {
 
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
     startTimer();
   }
