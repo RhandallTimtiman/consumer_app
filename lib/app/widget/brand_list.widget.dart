@@ -1,4 +1,5 @@
 import 'package:consumer_app/app/data/controller/category.controller.dart';
+import 'package:consumer_app/app/module/screen/screen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -80,28 +81,36 @@ class BrandList extends StatelessWidget {
                   child: Column(
                     children: [
                       for (var i = 0; i < 20; i++)
-                        Container(
-                          height: 50,
-                          padding: const EdgeInsets.symmetric(
-                            horizontal: 15,
-                          ),
-                          decoration: BoxDecoration(
-                            border: const Border(
-                              top: BorderSide(
-                                width: 1,
-                                color: Color.fromRGBO(217, 217, 217, 1),
-                              ),
+                        InkWell(
+                          onTap: () {
+                            Get.to(() => const CategoryItemsScreen());
+                          },
+                          child: Container(
+                            height: 50,
+                            padding: const EdgeInsets.symmetric(
+                              horizontal: 15,
                             ),
-                            color: i == 2
-                                ? const Color.fromRGBO(234, 240, 233, 1)
-                                : null,
-                          ),
-                          child: Row(
-                            children: const [
-                              Text(
-                                'Accurapil',
+                            decoration: BoxDecoration(
+                              border: const Border(
+                                top: BorderSide(
+                                  width: 1,
+                                  color: Color.fromRGBO(217, 217, 217, 1),
+                                ),
                               ),
-                            ],
+                              color: i == 2
+                                  ? const Color.fromRGBO(234, 240, 233, 1)
+                                  : null,
+                            ),
+                            child: Row(
+                              children: const [
+                                Text(
+                                  'Accurapil',
+                                  style: TextStyle(
+                                    fontWeight: FontWeight.w300,
+                                  ),
+                                ),
+                              ],
+                            ),
                           ),
                         )
                     ],

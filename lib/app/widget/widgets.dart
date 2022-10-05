@@ -5,3 +5,4 @@ export 'discount_timer.widget.dart';
 export 'item_card.widget.dart';
 export 'category_list.widget.dart';
 export 'brand_list.widget.dart';
+export 'product_card.widget.dart';

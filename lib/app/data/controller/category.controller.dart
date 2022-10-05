@@ -37,11 +37,11 @@ class CategoryController extends GetxController {
                     filled: true,
                     fillColor: Colors.white,
                     hintStyle: TextStyle(
-                      fontWeight: FontWeight.bold,
+                      fontWeight: FontWeight.w500,
                       fontSize: 14,
                       color: Colors.grey[400],
                     ),
-                    hintText: 'Received by',
+                    hintText: 'Search Key',
                   ),
                 ),
                 SizedBox(

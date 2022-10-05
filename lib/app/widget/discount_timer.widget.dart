@@ -56,8 +56,8 @@ class _DiscountTimerState extends State<DiscountTimer> {
       children: [
         Container(
           padding: const EdgeInsets.all(2),
-          height: 30,
-          width: 30,
+          height: 26,
+          width: 26,
           decoration: const BoxDecoration(
             color: Color.fromRGBO(
               73,
@@ -76,7 +76,7 @@ class _DiscountTimerState extends State<DiscountTimer> {
               hours,
               style: const TextStyle(
                 color: Colors.white,
-                fontWeight: FontWeight.bold,
+                fontWeight: FontWeight.w500,
                 fontSize: 15,
               ),
             ),
@@ -89,7 +89,7 @@ class _DiscountTimerState extends State<DiscountTimer> {
               ':',
               style: TextStyle(
                 fontSize: 25,
-                fontWeight: FontWeight.bold,
+                fontWeight: FontWeight.w500,
                 color: Color.fromRGBO(
                   73,
                   130,
@@ -102,8 +102,8 @@ class _DiscountTimerState extends State<DiscountTimer> {
         ),
         Container(
           padding: const EdgeInsets.all(2),
-          height: 30,
-          width: 30,
+          height: 26,
+          width: 26,
           decoration: const BoxDecoration(
             color: Color.fromRGBO(
               73,
@@ -122,7 +122,7 @@ class _DiscountTimerState extends State<DiscountTimer> {
               minutes,
               style: const TextStyle(
                 color: Colors.white,
-                fontWeight: FontWeight.bold,
+                fontWeight: FontWeight.w500,
                 fontSize: 15,
               ),
             ),
@@ -135,7 +135,7 @@ class _DiscountTimerState extends State<DiscountTimer> {
               ':',
               style: TextStyle(
                 fontSize: 25,
-                fontWeight: FontWeight.bold,
+                fontWeight: FontWeight.w500,
                 color: Color.fromRGBO(
                   73,
                   130,
@@ -148,8 +148,8 @@ class _DiscountTimerState extends State<DiscountTimer> {
         ),
         Container(
           padding: const EdgeInsets.all(2),
-          height: 30,
-          width: 30,
+          height: 26,
+          width: 26,
           decoration: const BoxDecoration(
             color: Color.fromRGBO(
               73,
@@ -168,7 +168,7 @@ class _DiscountTimerState extends State<DiscountTimer> {
               seconds,
               style: const TextStyle(
                 color: Colors.white,
-                fontWeight: FontWeight.bold,
+                fontWeight: FontWeight.w500,
                 fontSize: 15,
               ),
             ),

@@ -32,14 +32,14 @@ class ItemCard extends StatelessWidget {
                           'Lorem Ipsum',
                           style: TextStyle(
                             fontSize: 11,
-                            fontWeight: FontWeight.w200,
+                            fontWeight: FontWeight.w400,
                           ),
                         ),
                         Text(
                           'Lorem Ipsum',
                           style: TextStyle(
                             fontSize: 10,
-                            fontWeight: FontWeight.w200,
+                            fontWeight: FontWeight.w400,
                             color: Colors.grey,
                           ),
                         ),
@@ -65,7 +65,7 @@ class ItemCard extends StatelessWidget {
                           'Php 1500.00',
                           style: TextStyle(
                             fontSize: 11,
-                            fontWeight: FontWeight.w200,
+                            fontWeight: FontWeight.w400,
                             color: Color.fromRGBO(
                               73,
                               130,
@@ -78,7 +78,7 @@ class ItemCard extends StatelessWidget {
                           'Php 2000.00',
                           style: TextStyle(
                             fontSize: 9,
-                            fontWeight: FontWeight.w200,
+                            fontWeight: FontWeight.w400,
                             decoration: TextDecoration.lineThrough,
                           ),
                         ),
