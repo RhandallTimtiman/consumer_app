@@ -1,5 +1,4 @@
-import 'package:consumer_app/app/core/constants/app.routes.dart';
-import 'package:consumer_app/app/core/constants/themes/themes.dart';
+import 'package:consumer_app/app/core/constants/app_routes.dart';
 import 'package:consumer_app/app/module/binding/binding.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -16,15 +15,15 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetMaterialApp(
       title: 'Flutter Demo',
-      theme: AppTheme().light,
-      // theme: ThemeData(
-      //   primaryColor: const Color.fromRGBO(
-      //     73,
-      //     130,
-      //     61,
-      //     1,
-      //   ),
-      // ),
+      // theme: AppTheme().light,
+      theme: ThemeData(
+        primaryColor: const Color.fromRGBO(
+          73,
+          130,
+          61,
+          1,
+        ),
+      ),
       initialRoute: '/',
       debugShowCheckedModeBanner: false,
       initialBinding: LoginBinding(),

@@ -12,7 +12,7 @@ class ProfileAdditionalInfo extends GetView<ProfileController> {
   Widget build(BuildContext context) {
     return Container(
       width: Screen.width(context),
-      color: Theme.of(context).backgroundColor,
+      color: Colors.white,
       padding: const EdgeInsets.symmetric(vertical: 12, horizontal: 16),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -28,11 +28,11 @@ class ProfileAdditionalInfo extends GetView<ProfileController> {
               const SizedBox(
                 width: 10,
               ),
-              Text(
+              const Text(
                 'Additional Information',
                 style: TextStyle(
                   fontWeight: FontWeight.bold,
-                  fontSize: Theme.of(context).textTheme.headline4!.fontSize,
+                  fontSize: 24,
                   color: Colors.black,
                 ),
               ),
@@ -46,11 +46,11 @@ class ProfileAdditionalInfo extends GetView<ProfileController> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text(
+                const Text(
                   'Tax Number',
                   style: TextStyle(
                     fontWeight: FontWeight.bold,
-                    fontSize: Theme.of(context).textTheme.headline2!.fontSize,
+                    fontSize: 16,
                     color: Colors.black,
                   ),
                 ),
@@ -87,22 +87,21 @@ class ProfileAdditionalInfo extends GetView<ProfileController> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text(
+                const Text(
                   'Senior Citizen',
                   style: TextStyle(
                     fontWeight: FontWeight.bold,
-                    fontSize: Theme.of(context).textTheme.headline2!.fontSize,
+                    fontSize: 16,
                     color: Colors.black,
                   ),
                 ),
                 Row(
                   children: [
-                    Expanded(
+                    const Expanded(
                       child: Text(
                         'Are you a Senior Citizen?',
                         style: TextStyle(
-                          fontSize:
-                              Theme.of(context).textTheme.headline1!.fontSize,
+                          fontSize: 12,
                           color: Colors.black,
                         ),
                       ),

@@ -12,16 +12,35 @@ class ProfileScreen extends StatefulWidget {
 }
 
 class _ProfileScreenState extends State<ProfileScreen> {
+  final GlobalKey<ScaffoldState> scaffoldKey = GlobalKey<ScaffoldState>();
+
+  void openDrawer() {
+    scaffoldKey.currentState?.openDrawer();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        leading: GestureDetector(
+          onTap: () => openDrawer(),
+          child: const Icon(
+            Icons.menu,
+            color: Colors.white,
+            size: 30,
+          ),
+        ),
+        backgroundColor: const Color.fromRGBO(73, 130, 61, 1),
+        elevation: 0,
+      ),
+      drawer: const MainDrawer(),
       body: Container(
-        color: Theme.of(context).backgroundColor,
+        color: Colors.white,
         height: Screen.height(context),
         child: Column(
           children: [
             SizedBox(
-              height: Screen.height(context) * 0.27,
+              height: Screen.height(context) * 0.20,
               child: Stack(
                 children: [
                   Image.asset(
@@ -31,7 +50,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     height: Screen.height(context) * .25,
                   ),
                   Positioned(
-                    top: 40,
+                    top: 20,
                     child: SizedBox(
                       width: Screen.width(context),
                       child: Center(
@@ -53,7 +72,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     ),
                   ),
                   Positioned(
-                    top: 100,
+                    top: 80,
                     child: SizedBox(
                       width: Screen.width(context),
                       child: Column(

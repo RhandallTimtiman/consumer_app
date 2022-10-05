@@ -1,4 +1,4 @@
-import 'package:consumer_app/app/core/constants/app.routes.dart';
+import 'package:consumer_app/app/core/constants/app_routes.dart';
 import 'package:consumer_app/app/core/utilities/size.dart';
 import 'package:consumer_app/app/data/models/models.dart';
 import 'package:consumer_app/app/widget/widgets.dart';

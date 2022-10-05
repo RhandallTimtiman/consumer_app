@@ -17,7 +17,7 @@ class _ProfileAddressDetailsState extends State<ProfileAddressDetails> {
   Widget build(BuildContext context) {
     return Container(
       width: Screen.width(context),
-      color: Theme.of(context).backgroundColor,
+      color: Colors.white,
       padding: const EdgeInsets.symmetric(vertical: 12, horizontal: 16),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -33,11 +33,11 @@ class _ProfileAddressDetailsState extends State<ProfileAddressDetails> {
               const SizedBox(
                 width: 10,
               ),
-              Text(
+              const Text(
                 'Address Details',
                 style: TextStyle(
                   fontWeight: FontWeight.bold,
-                  fontSize: Theme.of(context).textTheme.headline4!.fontSize,
+                  fontSize: 24,
                   color: Colors.black,
                 ),
               ),

@@ -9,10 +9,10 @@ class MainController extends GetxController {
   RxInt currentIndex = 0.obs;
   final pages = <String>[
     '/home',
-    '/profile',
-    '/registration',
-    '/family-contact',
     '/home',
+    '/home',
+    '/home',
+    '/profile',
   ];
 
   void openDrawer() {
@@ -21,7 +21,7 @@ class MainController extends GetxController {
 
   void changePage(int index) {
     currentIndex.value = index;
-    // Get.toNamed(pages[index], id: 1);
+    Get.toNamed(pages[index], id: 1);
   }
 
   Route? onGenerateRoute(RouteSettings settings) {
@@ -103,7 +103,10 @@ class MainController extends GetxController {
             ),
             Text(
               label,
-              style: const TextStyle(fontSize: 9),
+              style: const TextStyle(
+                fontSize: 9,
+                color: Colors.white,
+              ),
             ),
           ],
         ),

@@ -35,6 +35,7 @@ class AppRoutes {
     GetPage(
       name: '/family-contact',
       page: () => const FamilyContactScreen(),
+      binding: FamilyContactBinding(),
     ),
   ];
 
@@ -60,7 +61,9 @@ class AppRoutes {
     DrawerItemModel(
       routeName: 'Set Family & Contacts',
       icon: FontAwesomeIcons.peopleGroup,
-      onTap: () {},
+      onTap: () {
+        Get.toNamed('/family-contact');
+      },
       width: 20,
     ),
     DrawerItemModel(

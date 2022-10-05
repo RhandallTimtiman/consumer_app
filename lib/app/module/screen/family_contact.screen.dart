@@ -11,23 +11,36 @@ class FamilyContactScreen extends GetView<FamilyContactController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        leading: GestureDetector(
+          onTap: () => controller.openDrawer(),
+          child: const Icon(
+            Icons.menu,
+            color: Colors.white,
+            size: 30,
+          ),
+        ),
+        backgroundColor: const Color.fromRGBO(73, 130, 61, 1),
+        elevation: 0,
+      ),
+      drawer: const MainDrawer(),
       body: Container(
         color: Colors.white,
         height: Screen.height(context),
         child: Column(
           children: [
             SizedBox(
-              height: Screen.height(context) * 0.3,
+              height: Screen.height(context) * 0.20,
               child: Stack(
                 children: [
                   Image.asset(
                     'assets/images/ellipse_bg.png',
                     width: double.infinity,
                     fit: BoxFit.fill,
-                    height: Screen.height(context) * .28,
+                    height: Screen.height(context) * .2,
                   ),
                   Positioned(
-                    top: Screen.height(context) * .07,
+                    top: Screen.height(context) * .03,
                     child: SizedBox(
                       width: Screen.width(context),
                       child: Column(
@@ -51,27 +64,23 @@ class FamilyContactScreen extends GetView<FamilyContactController> {
                           const SizedBox(
                             height: 10,
                           ),
-                          Text(
+                          const Text(
                             'Juan Dela Cruz',
                             style: TextStyle(
-                              fontSize: Theme.of(context)
-                                  .textTheme
-                                  .headline4!
-                                  .fontSize,
+                              fontSize: 24,
                               fontWeight: FontWeight.bold,
+                              color: Colors.white,
                             ),
                           ),
                           const SizedBox(
                             height: 5,
                           ),
-                          Text(
+                          const Text(
                             '09123456789',
                             style: TextStyle(
-                              fontSize: Theme.of(context)
-                                  .textTheme
-                                  .headline2!
-                                  .fontSize,
+                              fontSize: 16,
                               fontWeight: FontWeight.bold,
+                              color: Colors.white,
                             ),
                           ),
                         ],
@@ -101,16 +110,12 @@ class FamilyContactScreen extends GetView<FamilyContactController> {
                                     SizedBox(
                                       width: Screen.width(context) * 0.04,
                                     ),
-                                    Text(
+                                    const Text(
                                       'Set Family & Contacts',
                                       style: TextStyle(
-                                        color: Colors.black,
-                                        fontWeight: FontWeight.bold,
-                                        fontSize: Theme.of(context)
-                                            .textTheme
-                                            .headline3!
-                                            .fontSize,
-                                      ),
+                                          color: Colors.black,
+                                          fontWeight: FontWeight.bold,
+                                          fontSize: 18),
                                     ),
                                   ],
                                 ),

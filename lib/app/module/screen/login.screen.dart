@@ -2,7 +2,6 @@ import 'package:consumer_app/app/core/utilities/size.dart';
 import 'package:consumer_app/app/data/controller/controller.dart';
 import 'package:consumer_app/app/widget/widgets.dart';
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
 
 class LoginScreen extends StatefulWidget {
@@ -88,7 +87,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       color: Theme.of(context).primaryColor,
                       minWidth: double.infinity,
                       onPressed: () {
-                        Get.offAllNamed('/main');
+                        Get.toNamed('/main');
                       },
                       child: const Text(
                         'Sign In',
