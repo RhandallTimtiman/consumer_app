@@ -38,13 +38,13 @@ class CategoryList extends StatelessWidget {
             child: Column(
               children: [
                 Wrap(
-                  spacing: 10,
-                  runSpacing: 10,
+                  spacing: 20,
+                  runSpacing: 20,
                   children: [
                     for (var i = 0; i < 20; i++)
                       Container(
                         height: size.height * .2,
-                        width: size.width * .4,
+                        width: size.width * .40,
                         decoration: const BoxDecoration(
                           color: Colors.white,
                           borderRadius: BorderRadius.all(

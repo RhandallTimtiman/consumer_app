@@ -70,7 +70,7 @@ class CategoryScreen extends GetView<CategoryController> {
                                   Text(
                                     'Categories',
                                     style: TextStyle(
-                                      fontWeight: FontWeight.w300,
+                                      fontWeight: FontWeight.w500,
                                     ),
                                   ),
                                 ],
@@ -109,7 +109,7 @@ class CategoryScreen extends GetView<CategoryController> {
                                   Text(
                                     'List of Brand',
                                     style: TextStyle(
-                                      fontWeight: FontWeight.w300,
+                                      fontWeight: FontWeight.w500,
                                     ),
                                   ),
                                 ],

@@ -262,16 +262,13 @@ class _HomeScreenState extends State<HomeScreen> {
                                   )
                                 ],
                               ),
-                              const SizedBox(
-                                height: 5,
-                              ),
                               Row(
                                 crossAxisAlignment: CrossAxisAlignment.center,
                                 children: const [
                                   Text(
                                     'Discount ends in',
                                     style: TextStyle(
-                                      fontSize: 17,
+                                      fontSize: 15,
                                       color: Color.fromRGBO(88, 88, 88, 1),
                                       fontWeight: FontWeight.w500,
                                     ),
