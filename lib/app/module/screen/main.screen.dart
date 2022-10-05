@@ -9,9 +9,10 @@ class MainScreen extends GetView<MainController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      key: controller.scaffoldKey,
       body: Navigator(
         key: Get.nestedKey(1),
-        initialRoute: '/profile',
+        initialRoute: '/home',
         onGenerateRoute: controller.onGenerateRoute,
       ),
       bottomNavigationBar: Obx(

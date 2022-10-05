@@ -11,16 +11,26 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+  final GlobalKey<ScaffoldState> scaffoldKey = GlobalKey<ScaffoldState>();
+
+  void openDrawer() {
+    scaffoldKey.currentState?.openDrawer();
+  }
+
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
 
     return Scaffold(
+      key: scaffoldKey,
       appBar: AppBar(
-        leading: const Icon(
-          Icons.menu,
-          color: Colors.white,
-          size: 30,
+        leading: GestureDetector(
+          onTap: () => openDrawer(),
+          child: const Icon(
+            Icons.menu,
+            color: Colors.white,
+            size: 30,
+          ),
         ),
         actions: [
           Padding(
@@ -50,6 +60,7 @@ class _HomeScreenState extends State<HomeScreen> {
         backgroundColor: const Color.fromRGBO(73, 130, 61, 1),
         elevation: 0,
       ),
+      drawer: const MainDrawer(),
       body: Stack(
         children: [
           Image.asset(

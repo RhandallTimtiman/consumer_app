@@ -19,3 +19,6 @@ export 'category_list.widget.dart';
 export 'brand_list.widget.dart';
 export 'upload_profile.widget.dart';
 export 'product_card.widget.dart';
+export 'common/main_drawer.widget.dart';
+export 'drawer_item.widget.dart';
+export 'auth_input_field.widget.dart';

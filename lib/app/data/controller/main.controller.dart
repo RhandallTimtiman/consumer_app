@@ -5,18 +5,23 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class MainController extends GetxController {
+  final GlobalKey<ScaffoldState> scaffoldKey = GlobalKey<ScaffoldState>();
   RxInt currentIndex = 0.obs;
   final pages = <String>[
+    '/home',
     '/profile',
     '/registration',
     '/family-contact',
     '/home',
-    '/home',
   ];
+
+  void openDrawer() {
+    scaffoldKey.currentState?.openDrawer();
+  }
 
   void changePage(int index) {
     currentIndex.value = index;
-    Get.toNamed(pages[index], id: 1);
+    // Get.toNamed(pages[index], id: 1);
   }
 
   Route? onGenerateRoute(RouteSettings settings) {
