@@ -7,6 +7,8 @@ class ProductDetails extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var textTheme = Theme.of(context).textTheme;
+
     return Scaffold(
       body: SafeArea(
         child: ContainerBG(
@@ -28,12 +30,13 @@ class ProductDetails extends StatelessWidget {
                 ),
                 child: Text(
                   'Ketoplast',
-                  style: TextStyle(
+                  style: textTheme.headline6!.copyWith(
                     fontSize: Screen.getProportionateScreenHeight(
                       context,
                       32,
                     ),
                     fontWeight: FontWeight.w500,
+                    color: Colors.black,
                   ),
                   textAlign: TextAlign.start,
                 ),
@@ -63,7 +66,7 @@ class ProductDetails extends StatelessWidget {
                                 context,
                                 24,
                               ),
-                              fontWeight: FontWeight.bold,
+                              fontWeight: FontWeight.w500,
                             ),
                           )
                         ],
@@ -74,7 +77,7 @@ class ProductDetails extends StatelessWidget {
                         Icons.favorite_border,
                         size: Screen.getProportionateScreenHeight(
                           context,
-                          40,
+                          36,
                         ),
                       ),
                     )
@@ -166,7 +169,7 @@ class ProductDetails extends StatelessWidget {
                             Icons.forward_rounded,
                             size: Screen.getProportionateScreenHeight(
                               context,
-                              40,
+                              36,
                             ),
                           ),
                         ],

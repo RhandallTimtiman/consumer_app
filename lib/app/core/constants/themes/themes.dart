@@ -34,17 +34,18 @@ ThemeData _theme(ThemeColors color) => ThemeData.light().copyWith(
           fontWeight: FontWeight.bold,
         ),
         headline2: const TextStyle(
+          fontSize: 18,
+          fontFamily: 'Poppins',
+          fontWeight: FontWeight.bold,
+          color: Colors.black,
+        ),
+        headline1: const TextStyle(
           fontSize: 16,
           fontFamily: 'Poppins',
           fontWeight: FontWeight.bold,
         ),
-        headline1: const TextStyle(
-          fontSize: 12,
-          fontFamily: 'Poppins',
-          fontWeight: FontWeight.bold,
-        ),
         bodyText1: const TextStyle(
-          fontSize: 12,
+          fontSize: 14,
           fontFamily: 'Poppins',
           color: Colors.black,
         ),

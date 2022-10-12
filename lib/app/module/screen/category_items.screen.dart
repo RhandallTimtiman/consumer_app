@@ -215,7 +215,7 @@ class CategoryItemsScreen extends StatelessWidget {
                               children: [
                                 for (var i = 0; i < 20; i++)
                                   ProductCard(
-                                    height: Screen.height(context) * .43,
+                                    height: Screen.height(context) * .40,
                                     width: Screen.width(context) * .45,
                                   )
                               ],

@@ -14,6 +14,8 @@ class ProductCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var textTheme = Theme.of(context).textTheme;
+
     return GestureDetector(
       onTap: () {
         Get.to(() => const ProductDetails());
@@ -40,31 +42,36 @@ class ProductCard extends StatelessWidget {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      const Text(
+                      Text(
                         'Ketoplast (Ketofren hala hasjdkhasiuqwe,)',
-                        style: TextStyle(
-                          fontWeight: FontWeight.w500,
-                          fontSize: 15,
+                        style: textTheme.headline1!.copyWith(
+                          color: Colors.black,
+                          fontWeight: FontWeight.normal,
                         ),
                         maxLines: 1,
                         overflow: TextOverflow.ellipsis,
                       ),
-                      const Text(
+                      const SizedBox(
+                        height: 4,
+                      ),
+                      Text(
                         'Php 2000.00',
-                        style: TextStyle(
+                        style: textTheme.bodyText1!.copyWith(
                           fontSize: 12,
                           fontWeight: FontWeight.w500,
                           decoration: TextDecoration.lineThrough,
                           color: Colors.grey,
                         ),
                       ),
-                      const Text(
+                      Text(
                         'Php 2000.00',
-                        style: TextStyle(
-                          fontSize: 15,
+                        style: textTheme.headline1!.copyWith(
                           fontWeight: FontWeight.w500,
                           color: Colors.green,
                         ),
+                      ),
+                      const SizedBox(
+                        height: 4,
                       ),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -77,14 +84,13 @@ class ProductCard extends StatelessWidget {
                                 children: [
                                   const Icon(
                                     Icons.star,
-                                    size: 15,
+                                    size: 14,
                                     color: Colors.amber,
                                   ),
                                   const SizedBox(width: 5),
                                   Text(
                                     '4.5',
-                                    style: TextStyle(
-                                      fontSize: 10,
+                                    style: textTheme.bodyText2!.copyWith(
                                       fontWeight: FontWeight.w500,
                                       color: Colors.grey.shade700,
                                     ),
@@ -92,8 +98,7 @@ class ProductCard extends StatelessWidget {
                                   const SizedBox(width: 5),
                                   Text(
                                     '(17 Reviews)',
-                                    style: TextStyle(
-                                      fontSize: 10,
+                                    style: textTheme.bodyText2!.copyWith(
                                       fontWeight: FontWeight.w500,
                                       color: Colors.grey.shade700,
                                     ),
@@ -104,10 +109,11 @@ class ProductCard extends StatelessWidget {
                                 height: 5,
                               ),
                               Row(
+                                crossAxisAlignment: CrossAxisAlignment.center,
                                 children: [
                                   Icon(
                                     Icons.location_on_outlined,
-                                    size: 15,
+                                    size: 16,
                                     color: Colors.grey.shade500,
                                   ),
                                   const SizedBox(
@@ -115,10 +121,9 @@ class ProductCard extends StatelessWidget {
                                   ),
                                   Text(
                                     'Quezon City',
-                                    style: TextStyle(
-                                      fontSize: 9,
-                                      fontWeight: FontWeight.w400,
-                                      color: Colors.grey.shade500,
+                                    style: textTheme.bodyText2!.copyWith(
+                                      fontSize: 10,
+                                      color: Colors.grey.shade600,
                                     ),
                                   )
                                 ],
