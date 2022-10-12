@@ -6,3 +6,5 @@ export 'item_card.widget.dart';
 export 'category_list.widget.dart';
 export 'brand_list.widget.dart';
 export 'product_card.widget.dart';
+export 'carousel.dart';
+export 'container_bg.widget.dart';
