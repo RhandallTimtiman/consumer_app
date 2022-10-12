@@ -95,8 +95,9 @@ List<Widget> indicators(imagesLength, currentIndex) {
     imagesLength,
     (index) {
       return Container(
-        margin: const EdgeInsets.all(
-          3,
+        margin: const EdgeInsets.symmetric(
+          vertical: 3,
+          horizontal: 5,
         ),
         width: 10,
         height: 10,
