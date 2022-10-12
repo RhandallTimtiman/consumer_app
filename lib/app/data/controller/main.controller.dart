@@ -20,8 +20,10 @@ class MainController extends GetxController {
   }
 
   void changePage(int index) {
-    currentIndex.value = index;
-    Get.toNamed(pages[index], id: 1);
+    if (currentIndex.value != index) {
+      currentIndex.value = index;
+      Get.toNamed(pages[index], id: 1);
+    }
   }
 
   Route? onGenerateRoute(RouteSettings settings) {

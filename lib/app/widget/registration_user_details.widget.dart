@@ -63,7 +63,7 @@ class _RegistrationUserDetailsState extends State<RegistrationUserDetails> {
     return Container(
       width: Screen.width(context),
       color: Colors.white,
-      padding: const EdgeInsets.all(12),
+      padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 16),
       child: SingleChildScrollView(
         child: Form(
           key: widget.formKey,
@@ -76,6 +76,7 @@ class _RegistrationUserDetailsState extends State<RegistrationUserDetails> {
                   fontWeight: FontWeight.bold,
                 ),
               ),
+              const SizedBox(height: 8),
               InfoField(
                 label: 'Create Username',
                 obscureText: false,
@@ -87,7 +88,7 @@ class _RegistrationUserDetailsState extends State<RegistrationUserDetails> {
                     Get.find<RegistrationUserController>().usernameController,
                 isRequired: true,
               ),
-              const SizedBox(height: 20),
+              const SizedBox(height: 24),
               Obx(
                 () => InfoField(
                   label: 'Create Password',
@@ -105,7 +106,7 @@ class _RegistrationUserDetailsState extends State<RegistrationUserDetails> {
                   isRequired: true,
                 ),
               ),
-              const SizedBox(height: 20),
+              const SizedBox(height: 24),
               Obx(
                 () => InfoField(
                   label: 'Confirm Password',
@@ -128,7 +129,7 @@ class _RegistrationUserDetailsState extends State<RegistrationUserDetails> {
                   responseValidator: 'Must match the previous entry',
                 ),
               ),
-              const SizedBox(height: 20),
+              const SizedBox(height: 24),
               InfoField(
                 label: 'Email Address',
                 obscureText: false,
@@ -140,7 +141,7 @@ class _RegistrationUserDetailsState extends State<RegistrationUserDetails> {
                     Get.find<RegistrationUserController>().emailController,
                 isRequired: true,
               ),
-              const SizedBox(height: 20),
+              const SizedBox(height: 24),
               InfoField(
                 label: 'First Name',
                 obscureText: false,
@@ -152,7 +153,7 @@ class _RegistrationUserDetailsState extends State<RegistrationUserDetails> {
                     Get.find<RegistrationUserController>().firstNameController,
                 isRequired: true,
               ),
-              const SizedBox(height: 20),
+              const SizedBox(height: 24),
               InfoField(
                 label: 'M.I',
                 obscureText: false,
@@ -164,7 +165,7 @@ class _RegistrationUserDetailsState extends State<RegistrationUserDetails> {
                     Get.find<RegistrationUserController>().middleNameController,
                 isRequired: true,
               ),
-              const SizedBox(height: 20),
+              const SizedBox(height: 24),
               InfoField(
                 label: 'Last Name',
                 obscureText: false,

@@ -11,6 +11,7 @@ class FamilyContactScreen extends GetView<FamilyContactController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      key: controller.scaffoldKey,
       appBar: AppBar(
         leading: GestureDetector(
           onTap: () => controller.openDrawer(),

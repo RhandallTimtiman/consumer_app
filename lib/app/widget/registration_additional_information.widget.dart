@@ -77,7 +77,7 @@ class _RegistrationAdditionalInformationState
     return Container(
       width: Screen.width(context),
       color: Colors.white,
-      padding: const EdgeInsets.symmetric(vertical: 12),
+      padding: const EdgeInsets.symmetric(vertical: 16),
       child: SingleChildScrollView(
         child: Form(
           key: widget.formKey,
@@ -85,7 +85,7 @@ class _RegistrationAdditionalInformationState
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Container(
-                padding: const EdgeInsets.symmetric(horizontal: 18),
+                padding: const EdgeInsets.symmetric(horizontal: 24),
                 child: const Text(
                   'Additional Information',
                   style: TextStyle(
@@ -94,11 +94,11 @@ class _RegistrationAdditionalInformationState
                   ),
                 ),
               ),
-              SizedBox(
-                height: Screen.height(context) * 0.03,
+              const SizedBox(
+                height: 24,
               ),
               Container(
-                padding: const EdgeInsets.symmetric(horizontal: 18),
+                padding: const EdgeInsets.symmetric(horizontal: 24),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
@@ -127,18 +127,18 @@ class _RegistrationAdditionalInformationState
                   ],
                 ),
               ),
-              SizedBox(
-                height: Screen.height(context) * 0.03,
+              const SizedBox(
+                height: 24,
               ),
               const Separator(
                 isHorizontal: true,
                 dashWidth: 5,
               ),
-              SizedBox(
-                height: Screen.height(context) * 0.03,
+              const SizedBox(
+                height: 24,
               ),
               Container(
-                padding: const EdgeInsets.symmetric(horizontal: 18),
+                padding: const EdgeInsets.symmetric(horizontal: 24),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
@@ -149,8 +149,8 @@ class _RegistrationAdditionalInformationState
                         color: Colors.black,
                       ),
                     ),
-                    SizedBox(
-                      height: Screen.height(context) * 0.03,
+                    const SizedBox(
+                      height: 24,
                     ),
                     Row(
                       children: [
@@ -162,9 +162,6 @@ class _RegistrationAdditionalInformationState
                             ),
                           ),
                         ),
-                        // SizedBox(
-                        //   width: Screen.width(context) * 0.1,
-                        // ),
                         Expanded(
                           child: Checkbox(
                             value: isSeniorCitizen,
@@ -195,8 +192,8 @@ class _RegistrationAdditionalInformationState
                                 initialValue: '',
                                 prefixIcon: FontAwesomeIcons.idCard,
                               ),
-                              SizedBox(
-                                height: Screen.height(context) * 0.03,
+                              const SizedBox(
+                                height: 24,
                               ),
                               InfoFieldUpload(
                                 controller: Get.find<
@@ -269,8 +266,8 @@ class _RegistrationAdditionalInformationState
                                   ),
                                 ),
                               ),
-                              SizedBox(
-                                height: Screen.height(context) * 0.03,
+                              const SizedBox(
+                                height: 24,
                               ),
                               DateField(
                                 label: 'Senior Citizen ID Expiration Date',
@@ -282,8 +279,8 @@ class _RegistrationAdditionalInformationState
                             ],
                           )
                         : const SizedBox.shrink(),
-                    SizedBox(
-                      height: Screen.height(context) * 0.03,
+                    const SizedBox(
+                      height: 24,
                     ),
                   ],
                 ),
@@ -292,11 +289,11 @@ class _RegistrationAdditionalInformationState
                 isHorizontal: true,
                 dashWidth: 5,
               ),
-              SizedBox(
-                height: Screen.height(context) * 0.03,
+              const SizedBox(
+                height: 24,
               ),
               Container(
-                padding: const EdgeInsets.symmetric(horizontal: 18),
+                padding: const EdgeInsets.symmetric(horizontal: 24),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
@@ -317,9 +314,6 @@ class _RegistrationAdditionalInformationState
                             ),
                           ),
                         ),
-                        // SizedBox(
-                        //   width: Screen.width(context) * 0.1,
-                        // ),
                         Expanded(
                           child: Checkbox(
                             value: isPWD,
@@ -336,8 +330,8 @@ class _RegistrationAdditionalInformationState
                         ),
                       ],
                     ),
-                    SizedBox(
-                      height: Screen.height(context) * 0.03,
+                    const SizedBox(
+                      height: 24,
                     ),
                     isPWD
                         ? Column(
@@ -354,8 +348,8 @@ class _RegistrationAdditionalInformationState
                                 initialValue: '',
                                 prefixIcon: FontAwesomeIcons.idCard,
                               ),
-                              SizedBox(
-                                height: Screen.height(context) * 0.03,
+                              const SizedBox(
+                                height: 24,
                               ),
                               InfoFieldUpload(
                                 controller: Get.find<
@@ -424,8 +418,8 @@ class _RegistrationAdditionalInformationState
                                   ),
                                 ),
                               ),
-                              SizedBox(
-                                height: Screen.height(context) * 0.03,
+                              const SizedBox(
+                                height: 24,
                               ),
                               DateField(
                                 label: 'PWD ID Expiration Date',
@@ -440,15 +434,18 @@ class _RegistrationAdditionalInformationState
                   ],
                 ),
               ),
+              const SizedBox(
+                height: 24,
+              ),
               const Separator(
                 isHorizontal: true,
                 dashWidth: 5,
               ),
-              SizedBox(
-                height: Screen.height(context) * 0.03,
+              const SizedBox(
+                height: 24,
               ),
               Container(
-                padding: const EdgeInsets.symmetric(horizontal: 18),
+                padding: const EdgeInsets.symmetric(horizontal: 24),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [

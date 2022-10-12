@@ -8,7 +8,7 @@ class InfoField extends StatefulWidget {
   final String? hint;
   final bool isEnabled;
   final IconData? prefixIcon;
-  final IconData? suffixIcon;
+  final Widget? suffix;
   final bool isPassword;
   final VoidCallback? callback;
   final bool readonly;
@@ -28,7 +28,7 @@ class InfoField extends StatefulWidget {
     this.prefixIcon,
     this.isPassword = false,
     this.callback,
-    this.suffixIcon,
+    this.suffix,
     this.readonly = false,
     this.controller,
     this.errorText,
@@ -60,6 +60,7 @@ class _InfoFieldState extends State<InfoField> {
             fontSize: 12,
             color: widget.isEnabled ? Colors.black : Colors.grey.shade600,
           ),
+
           obscureText: widget.obscureText,
           validator: (text) {
             if (widget.isRequired && (text == null || text.isEmpty)) {
@@ -83,8 +84,8 @@ class _InfoFieldState extends State<InfoField> {
           decoration: InputDecoration(
             isDense: widget.prefixIcon == null,
             contentPadding: widget.prefixIcon == null
-                ? const EdgeInsets.only(top: 10, left: 45.0, bottom: 8)
-                : const EdgeInsets.only(top: 10, left: 20),
+                ? const EdgeInsets.only(top: 8, left: 48.0, bottom: 8)
+                : const EdgeInsets.only(top: 8, left: 24),
             counterText: "",
             filled: true,
             fillColor: Colors.white,
@@ -93,12 +94,27 @@ class _InfoFieldState extends State<InfoField> {
               fontSize: 11,
               color: Colors.grey,
             ),
+            border: UnderlineInputBorder(
+              borderSide: BorderSide(
+                color: Theme.of(context).primaryColor,
+              ),
+            ),
+            enabledBorder: UnderlineInputBorder(
+              borderSide: BorderSide(
+                color: Theme.of(context).primaryColor,
+              ),
+            ),
+            focusedBorder: UnderlineInputBorder(
+              borderSide: BorderSide(
+                color: Theme.of(context).primaryColor,
+              ),
+            ),
             prefixIcon: widget.prefixIcon != null
                 ? Padding(
                     padding: const EdgeInsets.only(right: 20.0),
                     child: Icon(
                       widget.prefixIcon,
-                      // size: 20,
+                      size: 20,
                       color: Theme.of(context).primaryColor,
                     ),
                   )
@@ -120,21 +136,17 @@ class _InfoFieldState extends State<InfoField> {
                           widget.obscureText
                               ? Icons.visibility
                               : Icons.visibility_off,
+                          size: 18,
                         ),
                         onPressed: widget.callback,
                       ),
                     ),
                   )
-                : widget.isEnabled && widget.suffixIcon != null
-                    ? IconButton(
-                        icon: Icon(
-                          widget.suffixIcon,
-                        ),
-                        onPressed: widget.callback,
-                      )
+                : widget.isEnabled && widget.suffix != null
+                    ? widget.suffix
                     : null,
             suffixIconConstraints: BoxConstraints(
-              maxHeight: Screen.height(context) * 0.02,
+              maxHeight: Screen.height(context) * 0.03,
             ),
           ),
           enabled: widget.isEnabled,

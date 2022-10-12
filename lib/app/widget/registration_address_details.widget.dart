@@ -48,7 +48,7 @@ class _RegistrationAddressDetailsState
     return Container(
       width: Screen.width(context),
       color: Colors.white,
-      padding: const EdgeInsets.all(12),
+      padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 16),
       child: SingleChildScrollView(
         child: Form(
           key: widget.formKey,
@@ -61,6 +61,7 @@ class _RegistrationAddressDetailsState
                   fontWeight: FontWeight.bold,
                 ),
               ),
+              const SizedBox(height: 8),
               InfoField(
                 controller: Get.find<RegistrationAddressrController>()
                     .countryController,
@@ -72,11 +73,14 @@ class _RegistrationAddressDetailsState
                 isEnabled: true,
                 initialValue: '',
                 prefixIcon: Icons.public,
-                suffixIcon: Icons.arrow_drop_down,
+                suffix: Icon(
+                  Icons.arrow_drop_down,
+                  color: Theme.of(context).primaryColor,
+                ),
                 callback: Get.find<RegistrationAddressrController>()
                     .showModalCountries,
               ),
-              const SizedBox(height: 15),
+              const SizedBox(height: 24),
               InfoField(
                 isRequired: true,
                 controller:
@@ -88,11 +92,14 @@ class _RegistrationAddressDetailsState
                 isEnabled: true,
                 initialValue: '',
                 prefixIcon: Icons.public,
-                suffixIcon: Icons.arrow_drop_down,
+                suffix: Icon(
+                  Icons.arrow_drop_down,
+                  color: Theme.of(context).primaryColor,
+                ),
                 callback: Get.find<RegistrationAddressrController>()
                     .showModalCountries,
               ),
-              const SizedBox(height: 15),
+              const SizedBox(height: 24),
               InfoField(
                 isRequired: true,
                 controller:
@@ -104,11 +111,14 @@ class _RegistrationAddressDetailsState
                 isEnabled: true,
                 initialValue: '',
                 prefixIcon: Icons.public,
-                suffixIcon: Icons.arrow_drop_down,
+                suffix: Icon(
+                  Icons.arrow_drop_down,
+                  color: Theme.of(context).primaryColor,
+                ),
                 callback: Get.find<RegistrationAddressrController>()
                     .showModalCountries,
               ),
-              const SizedBox(height: 15),
+              const SizedBox(height: 24),
               InfoField(
                 isRequired: true,
                 controller:
@@ -120,11 +130,14 @@ class _RegistrationAddressDetailsState
                 isEnabled: true,
                 initialValue: '',
                 prefixIcon: Icons.public,
-                suffixIcon: Icons.arrow_drop_down,
+                suffix: Icon(
+                  Icons.arrow_drop_down,
+                  color: Theme.of(context).primaryColor,
+                ),
                 callback: Get.find<RegistrationAddressrController>()
                     .showModalCountries,
               ),
-              const SizedBox(height: 15),
+              const SizedBox(height: 24),
               InfoField(
                 isRequired: true,
                 controller: Get.find<RegistrationAddressrController>()
@@ -136,11 +149,14 @@ class _RegistrationAddressDetailsState
                 isEnabled: true,
                 initialValue: '',
                 prefixIcon: Icons.public,
-                suffixIcon: Icons.arrow_drop_down,
+                suffix: Icon(
+                  Icons.arrow_drop_down,
+                  color: Theme.of(context).primaryColor,
+                ),
                 callback: Get.find<RegistrationAddressrController>()
                     .showModalCountries,
               ),
-              const SizedBox(height: 15),
+              const SizedBox(height: 24),
               InfoField(
                 isRequired: true,
                 controller: Get.find<RegistrationAddressrController>()
@@ -151,7 +167,7 @@ class _RegistrationAddressDetailsState
                 isEnabled: true,
                 initialValue: 'Test initial value',
               ),
-              const SizedBox(height: 15),
+              const SizedBox(height: 24),
               InfoField(
                 isRequired: true,
                 label: 'Map Address',
@@ -163,9 +179,12 @@ class _RegistrationAddressDetailsState
                 prefixIcon: Icons.map,
                 controller: Get.find<RegistrationAddressrController>()
                     .mapAddressController,
-                suffixIcon: FontAwesomeIcons.locationDot,
+                suffix: Icon(
+                  FontAwesomeIcons.locationDot,
+                  color: Theme.of(context).primaryColor,
+                ),
               ),
-              const SizedBox(height: 15),
+              const SizedBox(height: 24),
               const InfoField(
                 label: 'Additional Address Information (ie.bldg, etc)',
                 obscureText: false,
@@ -173,7 +192,7 @@ class _RegistrationAddressDetailsState
                 isEnabled: true,
               ),
               const SizedBox(
-                height: 20,
+                height: 24,
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,

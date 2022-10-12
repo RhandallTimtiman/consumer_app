@@ -15,7 +15,7 @@ class _LoginScreenState extends State<LoginScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // resizeToAvoidBottomInset: false,
+      resizeToAvoidBottomInset: false,
       body: Container(
         color: const Color.fromRGBO(186, 221, 214, 1),
         height: Screen.height(context),
@@ -151,7 +151,7 @@ class _LoginScreenState extends State<LoginScreen> {
                           child: Icon(
                             Icons.facebook,
                             color: Colors.white,
-                            size: Screen.height(context) * 0.04,
+                            size: Screen.height(context) * 0.035,
                           ),
                         ),
                       ],
@@ -163,9 +163,12 @@ class _LoginScreenState extends State<LoginScreen> {
                     child: Stack(
                       children: [
                         TextButton(
+                          style: ButtonStyle(
+                            padding: MaterialStateProperty.all(EdgeInsets.zero),
+                          ),
                           onPressed: () {},
                           child: Container(
-                            padding: const EdgeInsets.all(8),
+                            height: Screen.height(context) * 0.05,
                             decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(1000),
                               color: Colors.white.withOpacity(0.5),
@@ -188,7 +191,7 @@ class _LoginScreenState extends State<LoginScreen> {
                             image: const AssetImage(
                               'assets/icons/google_icon.png',
                             ),
-                            height: Screen.height(context) * 0.04,
+                            height: Screen.height(context) * 0.035,
                           ),
                         ),
                       ],

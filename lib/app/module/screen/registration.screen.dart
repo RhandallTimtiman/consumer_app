@@ -196,8 +196,6 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                           elevation: 4,
                           child: GestureDetector(
                             onTap: () {
-                              // Get.find<RegistrationController>()
-                              //     .showProfileModal();
                               Get.to(
                                 const UploadProfile(),
                               );
