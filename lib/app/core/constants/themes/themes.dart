@@ -11,15 +11,15 @@ ThemeData _theme(ThemeColors color) => ThemeData.light().copyWith(
       primaryColor: color.primary,
       scaffoldBackgroundColor: color.mainBackground,
       backgroundColor: color.mainBackground,
-      textTheme: TextTheme(
+      textTheme: const TextTheme().copyWith(
         headline6: TextStyle(
           color: color.primary,
-          fontSize: 70,
+          fontSize: 32,
           fontFamily: 'Poppins',
           fontWeight: FontWeight.bold,
         ),
         headline5: const TextStyle(
-          fontSize: 50,
+          fontSize: 28,
           fontFamily: 'Poppins',
           fontWeight: FontWeight.bold,
         ),
@@ -29,7 +29,7 @@ ThemeData _theme(ThemeColors color) => ThemeData.light().copyWith(
           fontWeight: FontWeight.bold,
         ),
         headline3: const TextStyle(
-          fontSize: 18,
+          fontSize: 20,
           fontFamily: 'Poppins',
           fontWeight: FontWeight.bold,
         ),
@@ -42,6 +42,16 @@ ThemeData _theme(ThemeColors color) => ThemeData.light().copyWith(
           fontSize: 12,
           fontFamily: 'Poppins',
           fontWeight: FontWeight.bold,
+        ),
+        bodyText1: const TextStyle(
+          fontSize: 12,
+          fontFamily: 'Poppins',
+          color: Colors.black,
+        ),
+        bodyText2: const TextStyle(
+          fontSize: 12,
+          fontFamily: 'Poppins',
+          color: Colors.black,
         ),
       ),
       elevatedButtonTheme: ElevatedButtonThemeData(

@@ -11,55 +11,11 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  final GlobalKey<ScaffoldState> scaffoldKey = GlobalKey<ScaffoldState>();
-
-  void openDrawer() {
-    scaffoldKey.currentState?.openDrawer();
-  }
-
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
 
     return Scaffold(
-      key: scaffoldKey,
-      appBar: AppBar(
-        leading: GestureDetector(
-          onTap: () => openDrawer(),
-          child: const Icon(
-            Icons.menu,
-            color: Colors.white,
-            size: 30,
-          ),
-        ),
-        actions: [
-          Padding(
-            padding: const EdgeInsets.only(
-              right: 10,
-            ),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: const [
-                Icon(
-                  Icons.search_rounded,
-                  color: Colors.white,
-                  size: 30,
-                ),
-                SizedBox(
-                  width: 10,
-                ),
-                Icon(
-                  Icons.shopping_basket,
-                  color: Colors.white,
-                  size: 30,
-                )
-              ],
-            ),
-          ),
-        ],
-        backgroundColor: const Color.fromRGBO(73, 130, 61, 1),
-        elevation: 0,
-      ),
       drawer: const MainDrawer(),
       body: Stack(
         children: [

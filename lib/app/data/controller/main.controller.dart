@@ -115,4 +115,87 @@ class MainController extends GetxController {
       ),
     );
   }
+
+  AppBar customAppBar(index) {
+    if (index != 0) {
+      return appBarWithSearch();
+    }
+    return AppBar(
+      leading: GestureDetector(
+        onTap: () => openDrawer(),
+        child: const Icon(
+          Icons.menu,
+          color: Colors.white,
+          size: 30,
+        ),
+      ),
+      actions: [
+        Padding(
+          padding: const EdgeInsets.only(
+            right: 10,
+          ),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: const [
+              Icon(
+                Icons.search_rounded,
+                color: Colors.white,
+                size: 30,
+              ),
+              SizedBox(
+                width: 10,
+              ),
+              Icon(
+                Icons.shopping_basket,
+                color: Colors.white,
+                size: 30,
+              )
+            ],
+          ),
+        ),
+      ],
+      backgroundColor: const Color.fromRGBO(73, 130, 61, 1),
+      elevation: 0,
+    );
+  }
+
+  AppBar appBarWithSearch() {
+    return AppBar(
+      leading: GestureDetector(
+        onTap: () => openDrawer(),
+        child: const Icon(
+          Icons.menu,
+          color: Colors.white,
+          size: 30,
+        ),
+      ),
+      actions: [
+        Padding(
+          padding: const EdgeInsets.only(
+            right: 10,
+          ),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: const [
+              Icon(
+                Icons.search_rounded,
+                color: Colors.white,
+                size: 30,
+              ),
+              SizedBox(
+                width: 10,
+              ),
+              Icon(
+                Icons.shopping_basket,
+                color: Colors.white,
+                size: 30,
+              )
+            ],
+          ),
+        ),
+      ],
+      backgroundColor: const Color.fromRGBO(73, 130, 61, 1),
+      elevation: 0,
+    );
+  }
 }

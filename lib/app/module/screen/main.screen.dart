@@ -1,4 +1,5 @@
 import 'package:consumer_app/app/data/controller/controller.dart';
+import 'package:consumer_app/app/widget/widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
@@ -10,6 +11,8 @@ class MainScreen extends GetView<MainController> {
   Widget build(BuildContext context) {
     return Scaffold(
       key: controller.scaffoldKey,
+      appBar: controller.customAppBar(controller.currentIndex.value),
+      drawer: const MainDrawer(),
       body: Navigator(
         key: Get.nestedKey(1),
         initialRoute: '/home',

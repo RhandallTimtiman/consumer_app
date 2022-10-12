@@ -21,20 +21,6 @@ class _ProfileScreenState extends State<ProfileScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      key: scaffoldKey,
-      appBar: AppBar(
-        leading: GestureDetector(
-          onTap: () => openDrawer(),
-          child: const Icon(
-            Icons.menu,
-            color: Colors.white,
-            size: 30,
-          ),
-        ),
-        backgroundColor: const Color.fromRGBO(73, 130, 61, 1),
-        elevation: 0,
-      ),
-      drawer: const MainDrawer(),
       body: Container(
         color: Colors.white,
         height: Screen.height(context),
