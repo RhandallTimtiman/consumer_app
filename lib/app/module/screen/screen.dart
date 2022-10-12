@@ -6,3 +6,4 @@ export 'main.screen.dart';
 export 'category.screen.dart';
 export 'category_items.screen.dart';
 export 'login.screen.dart';
+export 'product_details.screen.dart';

@@ -22,3 +22,5 @@ export 'product_card.widget.dart';
 export 'common/main_drawer.widget.dart';
 export 'drawer_item.widget.dart';
 export 'auth_input_field.widget.dart';
+export 'carousel.dart';
+export 'container_bg.widget.dart';

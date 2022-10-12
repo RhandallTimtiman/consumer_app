@@ -253,7 +253,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                 height: 10,
                               ),
                               SizedBox(
-                                height: size.height * .5,
+                                height: size.height * .55,
                                 child: GridView(
                                   gridDelegate:
                                       const SliverGridDelegateWithFixedCrossAxisCount(
