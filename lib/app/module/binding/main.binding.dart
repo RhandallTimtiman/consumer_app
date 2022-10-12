@@ -4,7 +4,11 @@ import 'package:get/get.dart';
 class MainBinding extends Bindings {
   @override
   void dependencies() {
-    Get.put(RegistrationUserController());
-    Get.put(CategoryController());
+    Get.put(
+      MainController(),
+    );
+    Get.put(
+      CategoryController(),
+    );
   }
 }

@@ -21,7 +21,6 @@ class _DiscountTimerState extends State<DiscountTimer> {
 
   @override
   void dispose() {
-    // TODO: implement dispose
     super.dispose();
     timer?.cancel();
   }

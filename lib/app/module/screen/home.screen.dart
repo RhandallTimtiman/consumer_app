@@ -16,40 +16,7 @@ class _HomeScreenState extends State<HomeScreen> {
     Size size = MediaQuery.of(context).size;
 
     return Scaffold(
-      appBar: AppBar(
-        leading: const Icon(
-          Icons.menu,
-          color: Colors.white,
-          size: 30,
-        ),
-        actions: [
-          Padding(
-            padding: const EdgeInsets.only(
-              right: 10,
-            ),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: const [
-                Icon(
-                  Icons.search_rounded,
-                  color: Colors.white,
-                  size: 30,
-                ),
-                SizedBox(
-                  width: 10,
-                ),
-                Icon(
-                  Icons.shopping_basket,
-                  color: Colors.white,
-                  size: 30,
-                )
-              ],
-            ),
-          ),
-        ],
-        backgroundColor: const Color.fromRGBO(73, 130, 61, 1),
-        elevation: 0,
-      ),
+      drawer: const MainDrawer(),
       body: Stack(
         children: [
           Image.asset(
@@ -286,7 +253,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                 height: 10,
                               ),
                               SizedBox(
-                                height: size.height * .5,
+                                height: size.height * .55,
                                 child: GridView(
                                   gridDelegate:
                                       const SliverGridDelegateWithFixedCrossAxisCount(
