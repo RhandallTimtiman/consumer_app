@@ -57,7 +57,9 @@ ThemeData _theme(ThemeColors color) => ThemeData.light().copyWith(
       ),
       elevatedButtonTheme: ElevatedButtonThemeData(
         style: ButtonStyle(
-          backgroundColor: MaterialStateProperty.all(color.primary),
+          backgroundColor: MaterialStateProperty.all(
+            color.primary,
+          ),
         ),
       ),
       bottomNavigationBarTheme: BottomNavigationBarThemeData(
