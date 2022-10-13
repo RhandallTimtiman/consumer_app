@@ -13,9 +13,9 @@ class ItemCard extends StatelessWidget {
       clipBehavior: Clip.antiAlias,
       child: Column(
         children: [
-          const SizedBox(
+          Container(
             height: 100,
-            child: Placeholder(),
+            color: Colors.grey,
           ),
           Expanded(
             child: Padding(
