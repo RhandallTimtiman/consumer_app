@@ -78,7 +78,7 @@ class ProductDetails extends StatelessWidget {
                         Icons.favorite_border,
                         size: Screen.getProportionateScreenHeight(
                           context,
-                          40,
+                          36,
                         ),
                       ),
                     )
@@ -157,7 +157,7 @@ class ProductDetails extends StatelessWidget {
                             Icons.forward_rounded,
                             size: Screen.getProportionateScreenHeight(
                               context,
-                              40,
+                              36,
                             ),
                           ),
                         ],
