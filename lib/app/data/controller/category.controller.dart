@@ -1,3 +1,4 @@
+import 'package:consumer_app/app/core/utilities/size.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -18,34 +19,51 @@ class CategoryController extends GetxController {
         child: SizedBox(
           height: size.height * .3,
           child: Padding(
-            padding: const EdgeInsets.all(20),
+            padding: EdgeInsets.all(
+              Screen.getProportionateScreenWidth(
+                context,
+                20,
+              ),
+            ),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                const Text(
+                Text(
                   'Type A - Z',
                   style: TextStyle(
-                    fontSize: 20,
+                    fontSize: Screen.getProportionateScreenHeight(
+                      context,
+                      20,
+                    ),
                     fontWeight: FontWeight.bold,
                   ),
                 ),
                 TextField(
-                  style: const TextStyle(
-                    fontSize: 14,
+                  style: TextStyle(
+                    fontSize: Screen.getProportionateScreenHeight(
+                      context,
+                      14,
+                    ),
                   ),
                   decoration: InputDecoration(
                     filled: true,
                     fillColor: Colors.white,
                     hintStyle: TextStyle(
                       fontWeight: FontWeight.w500,
-                      fontSize: 14,
+                      fontSize: Screen.getProportionateScreenHeight(
+                        context,
+                        14,
+                      ),
                       color: Colors.grey[400],
                     ),
                     hintText: 'Search Key',
                   ),
                 ),
                 SizedBox(
-                  height: 50,
+                  height: Screen.getProportionateScreenHeight(
+                    context,
+                    48,
+                  ),
                   width: double.infinity,
                   child: ElevatedButton(
                     style: ElevatedButton.styleFrom(

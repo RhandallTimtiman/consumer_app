@@ -1,3 +1,4 @@
+import 'package:consumer_app/app/core/utilities/size.dart';
 import 'package:consumer_app/app/module/screen/screen.dart';
 import 'package:consumer_app/app/widget/widgets.dart';
 import 'package:flutter/material.dart';
@@ -28,8 +29,11 @@ class _HomeScreenState extends State<HomeScreen> {
           Positioned(
             child: Container(
               width: size.width,
-              padding: const EdgeInsets.all(
-                15,
+              padding: EdgeInsets.all(
+                Screen.getProportionateScreenWidth(
+                  context,
+                  14,
+                ),
               ),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -40,20 +44,26 @@ class _HomeScreenState extends State<HomeScreen> {
                     children: [
                       Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
-                        children: const [
+                        children: [
                           Text(
                             'Hi Juan,',
                             style: TextStyle(
                               fontWeight: FontWeight.bold,
                               color: Colors.white,
-                              fontSize: 17,
+                              fontSize: Screen.getProportionateScreenHeight(
+                                context,
+                                17,
+                              ),
                             ),
                           ),
                           Text(
                             'Welcome Back!',
                             style: TextStyle(
                               color: Colors.white,
-                              fontSize: 17,
+                              fontSize: Screen.getProportionateScreenHeight(
+                                context,
+                                17,
+                              ),
                             ),
                           )
                         ],
@@ -62,32 +72,51 @@ class _HomeScreenState extends State<HomeScreen> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           RichText(
-                            text: const TextSpan(
+                            text: TextSpan(
                               children: [
-                                TextSpan(text: 'PHP '),
+                                TextSpan(
+                                  text: 'PHP ',
+                                  style: TextStyle(
+                                    fontSize:
+                                        Screen.getProportionateScreenHeight(
+                                      context,
+                                      15,
+                                    ),
+                                  ),
+                                ),
                                 TextSpan(
                                   text: '1000',
                                   style: TextStyle(
-                                    fontSize: 20,
+                                    fontSize:
+                                        Screen.getProportionateScreenHeight(
+                                      context,
+                                      20,
+                                    ),
                                     fontWeight: FontWeight.bold,
                                   ),
                                 ),
                               ],
                             ),
                           ),
-                          const Text(
+                          Text(
                             'Load Balance',
                             style: TextStyle(
                               color: Colors.white,
-                              fontSize: 11,
+                              fontSize: Screen.getProportionateScreenHeight(
+                                context,
+                                12,
+                              ),
                             ),
                           )
                         ],
                       )
                     ],
                   ),
-                  const SizedBox(
-                    height: 15,
+                  SizedBox(
+                    height: Screen.getProportionateScreenHeight(
+                      context,
+                      15,
+                    ),
                   ),
                   Expanded(
                     child: CustomScrollView(
@@ -103,37 +132,52 @@ class _HomeScreenState extends State<HomeScreen> {
                                   color: Colors.white.withOpacity(.9),
                                 ),
                               ),
-                              const SizedBox(
-                                height: 15,
+                              SizedBox(
+                                height: Screen.getProportionateScreenHeight(
+                                  context,
+                                  15,
+                                ),
                               ),
                               Row(
                                 mainAxisAlignment:
                                     MainAxisAlignment.spaceBetween,
                                 crossAxisAlignment: CrossAxisAlignment.center,
                                 children: [
-                                  const Text(
+                                  Text(
                                     'Recommendations',
                                     style: TextStyle(
-                                      fontSize: 17,
-                                      color: Color.fromRGBO(88, 88, 88, 1),
+                                      fontSize:
+                                          Screen.getProportionateScreenHeight(
+                                        context,
+                                        17,
+                                      ),
+                                      color:
+                                          const Color.fromRGBO(88, 88, 88, 1),
                                       fontWeight: FontWeight.bold,
                                     ),
                                   ),
                                   InkWell(
                                     onTap: () =>
                                         Get.to(() => const CategoryScreen()),
-                                    child: const Text(
+                                    child: Text(
                                       'View All >',
                                       style: TextStyle(
-                                        fontSize: 13,
+                                        fontSize:
+                                            Screen.getProportionateScreenHeight(
+                                          context,
+                                          13,
+                                        ),
                                         color: Colors.blue,
                                       ),
                                     ),
                                   )
                                 ],
                               ),
-                              const SizedBox(
-                                height: 15,
+                              SizedBox(
+                                height: Screen.getProportionateScreenHeight(
+                                  context,
+                                  15,
+                                ),
                               ),
                               SizedBox(
                                 height: size.height * .25,
@@ -176,19 +220,28 @@ class _HomeScreenState extends State<HomeScreen> {
                                 mainAxisAlignment:
                                     MainAxisAlignment.spaceBetween,
                                 crossAxisAlignment: CrossAxisAlignment.center,
-                                children: const [
+                                children: [
                                   Text(
                                     'News and Updates',
                                     style: TextStyle(
-                                      fontSize: 17,
-                                      color: Color.fromRGBO(88, 88, 88, 1),
+                                      fontSize:
+                                          Screen.getProportionateScreenHeight(
+                                        context,
+                                        17,
+                                      ),
+                                      color:
+                                          const Color.fromRGBO(88, 88, 88, 1),
                                       fontWeight: FontWeight.bold,
                                     ),
                                   ),
                                   Text(
                                     'View All >',
                                     style: TextStyle(
-                                      fontSize: 13,
+                                      fontSize:
+                                          Screen.getProportionateScreenHeight(
+                                        context,
+                                        13,
+                                      ),
                                       color: Colors.blue,
                                     ),
                                   )
@@ -211,19 +264,28 @@ class _HomeScreenState extends State<HomeScreen> {
                                 mainAxisAlignment:
                                     MainAxisAlignment.spaceBetween,
                                 crossAxisAlignment: CrossAxisAlignment.center,
-                                children: const [
+                                children: [
                                   Text(
                                     'Best Deals: LIMITED TIME OFFER',
                                     style: TextStyle(
-                                      fontSize: 17,
-                                      color: Color.fromRGBO(88, 88, 88, 1),
+                                      fontSize:
+                                          Screen.getProportionateScreenHeight(
+                                        context,
+                                        17,
+                                      ),
+                                      color:
+                                          const Color.fromRGBO(88, 88, 88, 1),
                                       fontWeight: FontWeight.bold,
                                     ),
                                   ),
                                   Text(
                                     'View All >',
                                     style: TextStyle(
-                                      fontSize: 13,
+                                      fontSize:
+                                          Screen.getProportionateScreenHeight(
+                                        context,
+                                        13,
+                                      ),
                                       color: Colors.blue,
                                     ),
                                   )
@@ -231,21 +293,32 @@ class _HomeScreenState extends State<HomeScreen> {
                               ),
                               Row(
                                 crossAxisAlignment: CrossAxisAlignment.center,
-                                children: const [
+                                children: [
                                   Text(
                                     'Discount ends in',
                                     style: TextStyle(
-                                      fontSize: 15,
-                                      color: Color.fromRGBO(88, 88, 88, 1),
+                                      fontSize:
+                                          Screen.getProportionateScreenHeight(
+                                        context,
+                                        15,
+                                      ),
+                                      color:
+                                          const Color.fromRGBO(88, 88, 88, 1),
                                       fontWeight: FontWeight.w500,
                                     ),
                                   ),
                                   SizedBox(
-                                    width: 10,
+                                    width: Screen.getProportionateScreenHeight(
+                                      context,
+                                      10,
+                                    ),
                                   ),
-                                  DiscountTimer(),
+                                  const DiscountTimer(),
                                   SizedBox(
-                                    height: 10,
+                                    height: Screen.getProportionateScreenHeight(
+                                      context,
+                                      10,
+                                    ),
                                   ),
                                 ],
                               ),
@@ -253,13 +326,22 @@ class _HomeScreenState extends State<HomeScreen> {
                                 height: 10,
                               ),
                               SizedBox(
-                                height: size.height * .45,
+                                height: size.height * .47,
                                 child: GridView(
+                                  shrinkWrap: true,
                                   gridDelegate:
-                                      const SliverGridDelegateWithFixedCrossAxisCount(
+                                      SliverGridDelegateWithFixedCrossAxisCount(
                                     crossAxisCount: 2,
-                                    crossAxisSpacing: 10,
-                                    mainAxisSpacing: 10,
+                                    crossAxisSpacing:
+                                        Screen.getProportionateScreenWidth(
+                                      context,
+                                      10,
+                                    ),
+                                    mainAxisSpacing:
+                                        Screen.getProportionateScreenHeight(
+                                      context,
+                                      10,
+                                    ),
                                     childAspectRatio: 1.3,
                                   ),
                                   scrollDirection: Axis.horizontal,

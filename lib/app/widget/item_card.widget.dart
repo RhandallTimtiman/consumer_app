@@ -1,3 +1,4 @@
+import 'package:consumer_app/app/core/utilities/size.dart';
 import 'package:flutter/material.dart';
 
 class ItemCard extends StatelessWidget {
@@ -14,7 +15,7 @@ class ItemCard extends StatelessWidget {
       child: Column(
         children: [
           Container(
-            height: 100,
+            height: Screen.getProportionateScreenHeight(context, 80),
             color: Colors.grey,
           ),
           Expanded(
@@ -27,32 +28,34 @@ class ItemCard extends StatelessWidget {
                   children: [
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
-                      children: const [
+                      children: [
                         Text(
                           'Lorem Ipsum',
                           style: TextStyle(
-                            fontSize: 11,
+                            fontSize: Screen.getProportionateScreenHeight(
+                                context, 11),
                             fontWeight: FontWeight.w400,
                           ),
                         ),
                         Text(
                           'Lorem Ipsum',
                           style: TextStyle(
-                            fontSize: 10,
+                            fontSize: Screen.getProportionateScreenHeight(
+                                context, 10),
                             fontWeight: FontWeight.w400,
                             color: Colors.grey,
                           ),
                         ),
                       ],
                     ),
-                    const Icon(
+                    Icon(
                       Icons.favorite_border,
-                      size: 20,
+                      size: Screen.getProportionateScreenHeight(context, 20),
                     )
                   ],
                 ),
-                const SizedBox(
-                  height: 5,
+                SizedBox(
+                  height: Screen.getProportionateScreenHeight(context, 5),
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -60,13 +63,14 @@ class ItemCard extends StatelessWidget {
                   children: [
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
-                      children: const [
+                      children: [
                         Text(
                           'Php 1500.00',
                           style: TextStyle(
-                            fontSize: 11,
+                            fontSize: Screen.getProportionateScreenHeight(
+                                context, 11),
                             fontWeight: FontWeight.w400,
-                            color: Color.fromRGBO(
+                            color: const Color.fromRGBO(
                               73,
                               130,
                               61,
@@ -77,7 +81,8 @@ class ItemCard extends StatelessWidget {
                         Text(
                           'Php 2000.00',
                           style: TextStyle(
-                            fontSize: 9,
+                            fontSize:
+                                Screen.getProportionateScreenHeight(context, 9),
                             fontWeight: FontWeight.w400,
                             decoration: TextDecoration.lineThrough,
                           ),

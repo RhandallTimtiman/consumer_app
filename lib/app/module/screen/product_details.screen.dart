@@ -24,9 +24,16 @@ class ProductDetails extends StatelessWidget {
                     children: [
                       Container(
                         width: Screen.width(context),
-                        height:
-                            Screen.getProportionateScreenHeight(context, 88),
-                        padding: const EdgeInsets.all(16),
+                        height: Screen.getProportionateScreenHeight(
+                          context,
+                          88,
+                        ),
+                        padding: EdgeInsets.all(
+                          Screen.getProportionateScreenWidth(
+                            context,
+                            16,
+                          ),
+                        ),
                         decoration: BoxDecoration(
                           border: Border(
                             bottom: BorderSide(
@@ -48,16 +55,24 @@ class ProductDetails extends StatelessWidget {
                           textAlign: TextAlign.start,
                         ),
                       ),
-                      const Carousel(
-                        carouselHeight: 300,
+                      Carousel(
+                        carouselHeight: Screen.getProportionateScreenHeight(
+                          context,
+                          300,
+                        ),
                       ),
                       SizedBox(
-                        height:
-                            Screen.getProportionateScreenHeight(context, 16),
+                        height: Screen.getProportionateScreenHeight(
+                          context,
+                          16,
+                        ),
                       ),
                       Padding(
-                        padding: const EdgeInsets.symmetric(
-                          horizontal: 16,
+                        padding: EdgeInsets.symmetric(
+                          horizontal: Screen.getProportionateScreenWidth(
+                            context,
+                            16,
+                          ),
                         ),
                         child: Row(
                           crossAxisAlignment: CrossAxisAlignment.start,
@@ -94,12 +109,18 @@ class ProductDetails extends StatelessWidget {
                           ],
                         ),
                       ),
-                      const SizedBox(
-                        height: 4,
+                      SizedBox(
+                        height: Screen.getProportionateScreenHeight(
+                          context,
+                          4,
+                        ),
                       ),
                       Padding(
-                        padding: const EdgeInsets.symmetric(
-                          horizontal: 16,
+                        padding: EdgeInsets.symmetric(
+                          horizontal: Screen.getProportionateScreenWidth(
+                            context,
+                            16,
+                          ),
                         ),
                         child: Row(
                           crossAxisAlignment: CrossAxisAlignment.center,
@@ -115,6 +136,11 @@ class ProductDetails extends StatelessWidget {
                                       fontWeight: FontWeight.w400,
                                       decoration: TextDecoration.lineThrough,
                                       color: Colors.grey,
+                                      fontSize:
+                                          Screen.getProportionateScreenHeight(
+                                        context,
+                                        20,
+                                      ),
                                     ),
                                   ),
                                   Text(
@@ -122,6 +148,11 @@ class ProductDetails extends StatelessWidget {
                                     style: textTheme.headline4!.copyWith(
                                       fontWeight: FontWeight.bold,
                                       color: Colors.green,
+                                      fontSize:
+                                          Screen.getProportionateScreenHeight(
+                                        context,
+                                        24,
+                                      ),
                                     ),
                                   ),
                                   Row(
@@ -143,6 +174,11 @@ class ProductDetails extends StatelessWidget {
                                         style: textTheme.headline2!.copyWith(
                                           fontWeight: FontWeight.bold,
                                           color: Colors.grey.shade800,
+                                          fontSize: Screen
+                                              .getProportionateScreenHeight(
+                                            context,
+                                            18,
+                                          ),
                                         ),
                                       ),
                                       const SizedBox(
@@ -153,6 +189,11 @@ class ProductDetails extends StatelessWidget {
                                         style: textTheme.headline2!.copyWith(
                                           fontWeight: FontWeight.bold,
                                           color: Colors.grey.shade800,
+                                          fontSize: Screen
+                                              .getProportionateScreenHeight(
+                                            context,
+                                            18,
+                                          ),
                                         ),
                                       ),
                                     ],
@@ -176,8 +217,11 @@ class ProductDetails extends StatelessWidget {
                           ],
                         ),
                       ),
-                      const SizedBox(
-                        height: 16,
+                      SizedBox(
+                        height: Screen.getProportionateScreenHeight(
+                          context,
+                          16,
+                        ),
                       ),
                       const Separator(
                         isHorizontal: true,
@@ -185,7 +229,12 @@ class ProductDetails extends StatelessWidget {
                         color: Colors.grey,
                       ),
                       Padding(
-                        padding: const EdgeInsets.all(16),
+                        padding: EdgeInsets.all(
+                          Screen.getProportionateScreenWidth(
+                            context,
+                            16,
+                          ),
+                        ),
                         child: Column(
                           children: [
                             Row(
@@ -198,6 +247,11 @@ class ProductDetails extends StatelessWidget {
                                     style: textTheme.headline2!.copyWith(
                                       color: Colors.grey.shade800,
                                       fontWeight: FontWeight.normal,
+                                      fontSize:
+                                          Screen.getProportionateScreenHeight(
+                                        context,
+                                        18,
+                                      ),
                                     ),
                                   ),
                                 ),
@@ -206,6 +260,11 @@ class ProductDetails extends StatelessWidget {
                                     'One Pharma',
                                     style: textTheme.headline2!.copyWith(
                                       color: Colors.grey.shade800,
+                                      fontSize:
+                                          Screen.getProportionateScreenHeight(
+                                        context,
+                                        18,
+                                      ),
                                     ),
                                     textAlign: TextAlign.end,
                                   ),
@@ -225,6 +284,11 @@ class ProductDetails extends StatelessWidget {
                                     style: textTheme.headline2!.copyWith(
                                       color: Colors.grey.shade800,
                                       fontWeight: FontWeight.normal,
+                                      fontSize:
+                                          Screen.getProportionateScreenHeight(
+                                        context,
+                                        18,
+                                      ),
                                     ),
                                   ),
                                 ),
@@ -233,6 +297,11 @@ class ProductDetails extends StatelessWidget {
                                     '1021325',
                                     style: textTheme.headline2!.copyWith(
                                       color: Colors.grey.shade800,
+                                      fontSize:
+                                          Screen.getProportionateScreenHeight(
+                                        context,
+                                        18,
+                                      ),
                                     ),
                                     textAlign: TextAlign.end,
                                   ),
@@ -252,6 +321,11 @@ class ProductDetails extends StatelessWidget {
                                     style: textTheme.headline2!.copyWith(
                                       color: Colors.grey.shade800,
                                       fontWeight: FontWeight.normal,
+                                      fontSize:
+                                          Screen.getProportionateScreenHeight(
+                                        context,
+                                        18,
+                                      ),
                                     ),
                                   ),
                                 ),
@@ -260,6 +334,11 @@ class ProductDetails extends StatelessWidget {
                                     '0 kg',
                                     style: textTheme.headline2!.copyWith(
                                       color: Colors.grey.shade800,
+                                      fontSize:
+                                          Screen.getProportionateScreenHeight(
+                                        context,
+                                        18,
+                                      ),
                                     ),
                                     textAlign: TextAlign.end,
                                   ),
@@ -275,8 +354,11 @@ class ProductDetails extends StatelessWidget {
                         color: Colors.grey,
                       ),
                       Padding(
-                        padding: const EdgeInsets.all(
-                          16,
+                        padding: EdgeInsets.all(
+                          Screen.getProportionateScreenWidth(
+                            context,
+                            16,
+                          ),
                         ),
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -286,6 +368,10 @@ class ProductDetails extends StatelessWidget {
                               style: textTheme.headline2!.copyWith(
                                 color: Colors.grey.shade800,
                                 fontWeight: FontWeight.w600,
+                                fontSize: Screen.getProportionateScreenHeight(
+                                  context,
+                                  18,
+                                ),
                               ),
                             ),
                             Text(
@@ -293,16 +379,27 @@ class ProductDetails extends StatelessWidget {
                               style: textTheme.headline2!.copyWith(
                                 color: Colors.grey.shade800,
                                 fontWeight: FontWeight.normal,
+                                fontSize: Screen.getProportionateScreenHeight(
+                                  context,
+                                  18,
+                                ),
                               ),
                             ),
-                            const SizedBox(
-                              height: 24,
+                            SizedBox(
+                              height: Screen.getProportionateScreenHeight(
+                                context,
+                                24,
+                              ),
                             ),
                             Text(
                               'Description',
                               style: textTheme.headline2!.copyWith(
                                 color: Colors.grey.shade800,
                                 fontWeight: FontWeight.w600,
+                                fontSize: Screen.getProportionateScreenHeight(
+                                  context,
+                                  18,
+                                ),
                               ),
                             ),
                             Text(
@@ -310,16 +407,27 @@ class ProductDetails extends StatelessWidget {
                               style: textTheme.headline2!.copyWith(
                                 color: Colors.grey.shade800,
                                 fontWeight: FontWeight.normal,
+                                fontSize: Screen.getProportionateScreenHeight(
+                                  context,
+                                  18,
+                                ),
                               ),
                             ),
-                            const SizedBox(
-                              height: 16,
+                            SizedBox(
+                              height: Screen.getProportionateScreenHeight(
+                                context,
+                                16,
+                              ),
                             ),
                             Text(
                               'Indications / Uses',
                               style: textTheme.headline2!.copyWith(
                                 color: Colors.grey.shade800,
                                 fontWeight: FontWeight.w600,
+                                fontSize: Screen.getProportionateScreenHeight(
+                                  context,
+                                  18,
+                                ),
                               ),
                             ),
                             Text(
@@ -327,16 +435,27 @@ class ProductDetails extends StatelessWidget {
                               style: textTheme.headline2!.copyWith(
                                 color: Colors.grey.shade800,
                                 fontWeight: FontWeight.normal,
+                                fontSize: Screen.getProportionateScreenHeight(
+                                  context,
+                                  18,
+                                ),
                               ),
                             ),
-                            const SizedBox(
-                              height: 24,
+                            SizedBox(
+                              height: Screen.getProportionateScreenHeight(
+                                context,
+                                24,
+                              ),
                             ),
                             Text(
                               'Warning',
                               style: textTheme.headline2!.copyWith(
                                 color: Colors.grey.shade800,
                                 fontWeight: FontWeight.w600,
+                                fontSize: Screen.getProportionateScreenHeight(
+                                  context,
+                                  18,
+                                ),
                               ),
                             ),
                             Text(
@@ -344,16 +463,27 @@ class ProductDetails extends StatelessWidget {
                               style: textTheme.headline2!.copyWith(
                                 color: Colors.grey.shade800,
                                 fontWeight: FontWeight.normal,
+                                fontSize: Screen.getProportionateScreenHeight(
+                                  context,
+                                  18,
+                                ),
                               ),
                             ),
-                            const SizedBox(
-                              height: 16,
+                            SizedBox(
+                              height: Screen.getProportionateScreenHeight(
+                                context,
+                                16,
+                              ),
                             ),
                             Text(
                               'Medical Prescription',
                               style: textTheme.headline2!.copyWith(
                                 color: Colors.grey.shade800,
                                 fontWeight: FontWeight.w600,
+                                fontSize: Screen.getProportionateScreenHeight(
+                                  context,
+                                  18,
+                                ),
                               ),
                             ),
                             Text(
@@ -361,6 +491,10 @@ class ProductDetails extends StatelessWidget {
                               style: textTheme.headline2!.copyWith(
                                 color: Colors.grey.shade800,
                                 fontWeight: FontWeight.normal,
+                                fontSize: Screen.getProportionateScreenHeight(
+                                  context,
+                                  18,
+                                ),
                               ),
                             ),
                           ],
@@ -371,7 +505,7 @@ class ProductDetails extends StatelessWidget {
                 ),
               ),
               Container(
-                decoration: BoxDecoration(
+                decoration: const BoxDecoration(
                   color: Colors.transparent,
                 ),
                 height: Screen.height(context) * .1,

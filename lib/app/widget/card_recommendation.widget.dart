@@ -1,3 +1,4 @@
+import 'package:consumer_app/app/core/utilities/size.dart';
 import 'package:flutter/material.dart';
 
 class CardRecommendation extends StatelessWidget {
@@ -43,9 +44,13 @@ class CardRecommendation extends StatelessWidget {
                 children: [
                   Text(
                     label,
-                    style: const TextStyle(
+                    style: TextStyle(
                       color: Colors.white,
                       fontWeight: FontWeight.bold,
+                      fontSize: Screen.getProportionateScreenHeight(
+                        context,
+                        15,
+                      ),
                     ),
                   ),
                 ],

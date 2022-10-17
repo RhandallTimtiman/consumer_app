@@ -1,3 +1,4 @@
+import 'package:consumer_app/app/core/utilities/size.dart';
 import 'package:flutter/material.dart';
 
 class Carousel extends StatefulWidget {
@@ -62,6 +63,10 @@ class _CarouselState extends State<Carousel> {
           children: indicators(
             images.length,
             activePage,
+            Screen.getProportionateScreenHeight(
+              context,
+              10,
+            ),
           ),
         )
       ],
@@ -90,7 +95,7 @@ AnimatedContainer slider(images, pagePosition, active) {
   );
 }
 
-List<Widget> indicators(imagesLength, currentIndex) {
+List<Widget> indicators(imagesLength, currentIndex, size) {
   return List<Widget>.generate(
     imagesLength,
     (index) {
@@ -99,8 +104,8 @@ List<Widget> indicators(imagesLength, currentIndex) {
           vertical: 3,
           horizontal: 5,
         ),
-        width: 10,
-        height: 10,
+        width: size,
+        height: size,
         decoration: BoxDecoration(
           color: currentIndex == index ? Colors.black : Colors.black26,
           shape: BoxShape.circle,

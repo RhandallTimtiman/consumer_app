@@ -1,3 +1,4 @@
+import 'package:consumer_app/app/core/utilities/size.dart';
 import 'package:consumer_app/app/data/controller/controller.dart';
 import 'package:consumer_app/app/widget/widgets.dart';
 import 'package:flutter/material.dart';
@@ -60,17 +61,22 @@ class CategoryScreen extends GetView<CategoryController> {
                               child: Row(
                                 crossAxisAlignment: CrossAxisAlignment.center,
                                 mainAxisAlignment: MainAxisAlignment.center,
-                                children: const [
-                                  Icon(
+                                children: [
+                                  const Icon(
                                     Icons.apps_rounded,
                                   ),
-                                  SizedBox(
+                                  const SizedBox(
                                     width: 5,
                                   ),
                                   Text(
                                     'Categories',
                                     style: TextStyle(
                                       fontWeight: FontWeight.w500,
+                                      fontSize:
+                                          Screen.getProportionateScreenHeight(
+                                        context,
+                                        14,
+                                      ),
                                     ),
                                   ),
                                 ],
@@ -99,17 +105,22 @@ class CategoryScreen extends GetView<CategoryController> {
                               child: Row(
                                 crossAxisAlignment: CrossAxisAlignment.center,
                                 mainAxisAlignment: MainAxisAlignment.center,
-                                children: const [
-                                  Icon(
+                                children: [
+                                  const Icon(
                                     Icons.apps_rounded,
                                   ),
-                                  SizedBox(
+                                  const SizedBox(
                                     width: 5,
                                   ),
                                   Text(
                                     'List of Brand',
                                     style: TextStyle(
                                       fontWeight: FontWeight.w500,
+                                      fontSize:
+                                          Screen.getProportionateScreenHeight(
+                                        context,
+                                        14,
+                                      ),
                                     ),
                                   ),
                                 ],

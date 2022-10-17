@@ -1,3 +1,4 @@
+import 'package:consumer_app/app/core/utilities/size.dart';
 import 'package:consumer_app/app/data/controller/category.controller.dart';
 import 'package:consumer_app/app/module/screen/screen.dart';
 import 'package:flutter/material.dart';
@@ -62,12 +63,20 @@ class BrandList extends StatelessWidget {
                     onTap: () {
                       Get.find<CategoryController>().searchBrand(context);
                     },
-                    child: const Text(
+                    child: Text(
                       'A - Z',
                       style: TextStyle(
-                        fontSize: 20,
+                        fontSize: Screen.getProportionateScreenHeight(
+                          context,
+                          20,
+                        ),
                         fontWeight: FontWeight.bold,
-                        color: Color.fromRGBO(151, 151, 151, 1),
+                        color: const Color.fromRGBO(
+                          151,
+                          151,
+                          151,
+                          1,
+                        ),
                       ),
                     ),
                   ),
@@ -102,11 +111,16 @@ class BrandList extends StatelessWidget {
                                   : null,
                             ),
                             child: Row(
-                              children: const [
+                              children: [
                                 Text(
                                   'Accurapil',
                                   style: TextStyle(
                                     fontWeight: FontWeight.w300,
+                                    fontSize:
+                                        Screen.getProportionateScreenHeight(
+                                      context,
+                                      14,
+                                    ),
                                   ),
                                 ),
                               ],

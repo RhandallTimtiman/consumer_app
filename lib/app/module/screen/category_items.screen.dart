@@ -1,7 +1,6 @@
 import 'package:consumer_app/app/core/utilities/size.dart';
 import 'package:consumer_app/app/widget/widgets.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 
 class CategoryItemsScreen extends StatelessWidget {
   const CategoryItemsScreen({Key? key}) : super(key: key);
@@ -10,18 +9,10 @@ class CategoryItemsScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
-        child: Container(
-          height: Screen.height(context),
-          width: Screen.width(context),
-          decoration: const BoxDecoration(
-            image: DecorationImage(
-              image: AssetImage(
-                'assets/images/bg.png',
-              ),
-              fit: BoxFit.cover,
-            ),
-          ),
-          child: Column(
+        child: ContainerBG(
+          containerHeight: Screen.height(context),
+          containerWidth: Screen.width(context),
+          widget: Column(
             children: [
               Container(
                 padding: const EdgeInsets.only(
@@ -36,25 +27,34 @@ class CategoryItemsScreen extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     Row(
-                      children: const [
+                      children: [
                         Text(
                           'Medicine',
                           style: TextStyle(
                             fontWeight: FontWeight.w500,
-                            fontSize: 25,
+                            fontSize: Screen.getProportionateScreenHeight(
+                              context,
+                              24,
+                            ),
                           ),
                         ),
                       ],
                     ),
                     Row(
-                      children: const [
+                      children: [
                         Icon(
                           Icons.swap_vert_rounded,
-                          size: 30,
+                          size: Screen.getProportionateScreenHeight(
+                            context,
+                            24,
+                          ),
                         ),
                         Icon(
                           Icons.filter_alt_outlined,
-                          size: 30,
+                          size: Screen.getProportionateScreenHeight(
+                            context,
+                            24,
+                          ),
                         ),
                       ],
                     )
@@ -84,8 +84,8 @@ class CategoryItemsScreen extends StatelessWidget {
                     children: [
                       Container(
                         padding: const EdgeInsets.symmetric(
-                          vertical: 10,
-                          horizontal: 15,
+                          vertical: 12,
+                          horizontal: 14,
                         ),
                         child: Column(
                           children: [
@@ -101,13 +101,17 @@ class CategoryItemsScreen extends StatelessWidget {
                                           MainAxisAlignment.spaceBetween,
                                       crossAxisAlignment:
                                           CrossAxisAlignment.center,
-                                      children: const [
+                                      children: [
                                         Text(
                                           'Best Deals: LIMITED TIME OFFER',
                                           style: TextStyle(
-                                            fontSize: 17,
-                                            color:
-                                                Color.fromRGBO(88, 88, 88, 1),
+                                            fontSize: Screen
+                                                .getProportionateScreenHeight(
+                                              context,
+                                              16,
+                                            ),
+                                            color: const Color.fromRGBO(
+                                                88, 88, 88, 1),
                                             fontWeight: FontWeight.bold,
                                           ),
                                         ),
@@ -118,31 +122,39 @@ class CategoryItemsScreen extends StatelessWidget {
                                           CrossAxisAlignment.center,
                                       mainAxisAlignment:
                                           MainAxisAlignment.start,
-                                      children: const [
+                                      children: [
                                         Text(
                                           'Discount ends in',
                                           style: TextStyle(
-                                            fontSize: 15,
-                                            color:
-                                                Color.fromRGBO(88, 88, 88, 1),
+                                            fontSize: Screen
+                                                .getProportionateScreenHeight(
+                                              context,
+                                              14,
+                                            ),
+                                            color: const Color.fromRGBO(
+                                                88, 88, 88, 1),
                                             fontWeight: FontWeight.w500,
                                           ),
                                         ),
-                                        SizedBox(
+                                        const SizedBox(
                                           width: 10,
                                         ),
-                                        DiscountTimer(),
-                                        SizedBox(
+                                        const DiscountTimer(),
+                                        const SizedBox(
                                           height: 10,
                                         ),
                                       ],
                                     ),
                                   ],
                                 ),
-                                const Text(
+                                Text(
                                   'View All >',
                                   style: TextStyle(
-                                    fontSize: 13,
+                                    fontSize:
+                                        Screen.getProportionateScreenHeight(
+                                      context,
+                                      13,
+                                    ),
                                     color: Colors.blue,
                                   ),
                                 )
@@ -169,7 +181,7 @@ class CategoryItemsScreen extends StatelessWidget {
                             ),
                           ),
                         ),
-                        child: const DefaultTabController(
+                        child: DefaultTabController(
                           length: 4,
                           child: TabBar(
                             isScrollable: true,
@@ -179,24 +191,40 @@ class CategoryItemsScreen extends StatelessWidget {
                                 'Price',
                                 style: TextStyle(
                                   color: Colors.black,
+                                  fontSize: Screen.getProportionateScreenHeight(
+                                    context,
+                                    14,
+                                  ),
                                 ),
                               ),
                               Text(
                                 'Rating',
                                 style: TextStyle(
                                   color: Colors.black,
+                                  fontSize: Screen.getProportionateScreenHeight(
+                                    context,
+                                    14,
+                                  ),
                                 ),
                               ),
                               Text(
                                 'Discount',
                                 style: TextStyle(
                                   color: Colors.black,
+                                  fontSize: Screen.getProportionateScreenHeight(
+                                    context,
+                                    14,
+                                  ),
                                 ),
                               ),
                               Text(
                                 'By Category',
                                 style: TextStyle(
                                   color: Colors.black,
+                                  fontSize: Screen.getProportionateScreenHeight(
+                                    context,
+                                    14,
+                                  ),
                                 ),
                               ),
                             ],

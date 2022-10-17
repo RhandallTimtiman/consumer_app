@@ -1,3 +1,4 @@
+import 'package:consumer_app/app/core/utilities/size.dart';
 import 'package:consumer_app/app/module/screen/screen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -31,14 +32,19 @@ class ProductCard extends StatelessWidget {
             children: [
               Image.network(
                 'https://picsum.photos/250?image=9',
-                height: height * .6,
+                height: height * .58,
                 width: double.infinity,
                 fit: BoxFit.cover,
               ),
               Expanded(
                 flex: 1,
                 child: Padding(
-                  padding: const EdgeInsets.all(8.0),
+                  padding: EdgeInsets.all(
+                    Screen.getProportionateScreenWidth(
+                      context,
+                      8,
+                    ),
+                  ),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
@@ -47,17 +53,27 @@ class ProductCard extends StatelessWidget {
                         style: textTheme.headline1!.copyWith(
                           color: Colors.black,
                           fontWeight: FontWeight.normal,
+                          fontSize: Screen.getProportionateScreenHeight(
+                            context,
+                            16,
+                          ),
                         ),
                         maxLines: 1,
                         overflow: TextOverflow.ellipsis,
                       ),
-                      const SizedBox(
-                        height: 4,
+                      SizedBox(
+                        height: Screen.getProportionateScreenHeight(
+                          context,
+                          4,
+                        ),
                       ),
                       Text(
                         'Php 2000.00',
                         style: textTheme.bodyText1!.copyWith(
-                          fontSize: 12,
+                          fontSize: Screen.getProportionateScreenHeight(
+                            context,
+                            12,
+                          ),
                           fontWeight: FontWeight.w500,
                           decoration: TextDecoration.lineThrough,
                           color: Colors.grey,
@@ -68,6 +84,10 @@ class ProductCard extends StatelessWidget {
                         style: textTheme.headline1!.copyWith(
                           fontWeight: FontWeight.w500,
                           color: Colors.green,
+                          fontSize: Screen.getProportionateScreenHeight(
+                            context,
+                            16,
+                          ),
                         ),
                       ),
                       const SizedBox(
@@ -93,6 +113,11 @@ class ProductCard extends StatelessWidget {
                                     style: textTheme.bodyText2!.copyWith(
                                       fontWeight: FontWeight.w500,
                                       color: Colors.grey.shade700,
+                                      fontSize:
+                                          Screen.getProportionateScreenHeight(
+                                        context,
+                                        12,
+                                      ),
                                     ),
                                   ),
                                   const SizedBox(width: 5),
@@ -101,19 +126,30 @@ class ProductCard extends StatelessWidget {
                                     style: textTheme.bodyText2!.copyWith(
                                       fontWeight: FontWeight.w500,
                                       color: Colors.grey.shade700,
+                                      fontSize:
+                                          Screen.getProportionateScreenHeight(
+                                        context,
+                                        12,
+                                      ),
                                     ),
                                   ),
                                 ],
                               ),
-                              const SizedBox(
-                                height: 5,
+                              SizedBox(
+                                height: Screen.getProportionateScreenHeight(
+                                  context,
+                                  5,
+                                ),
                               ),
                               Row(
                                 crossAxisAlignment: CrossAxisAlignment.center,
                                 children: [
                                   Icon(
                                     Icons.location_on_outlined,
-                                    size: 16,
+                                    size: Screen.getProportionateScreenHeight(
+                                      context,
+                                      16,
+                                    ),
                                     color: Colors.grey.shade500,
                                   ),
                                   const SizedBox(
@@ -122,7 +158,11 @@ class ProductCard extends StatelessWidget {
                                   Text(
                                     'Quezon City',
                                     style: textTheme.bodyText2!.copyWith(
-                                      fontSize: 10,
+                                      fontSize:
+                                          Screen.getProportionateScreenHeight(
+                                        context,
+                                        10,
+                                      ),
                                       color: Colors.grey.shade600,
                                     ),
                                   )

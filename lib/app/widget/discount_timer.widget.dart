@@ -1,5 +1,6 @@
 import 'dart:async';
 
+import 'package:consumer_app/app/core/utilities/size.dart';
 import 'package:flutter/material.dart';
 
 class DiscountTimer extends StatefulWidget {
@@ -54,9 +55,20 @@ class _DiscountTimerState extends State<DiscountTimer> {
     return Row(
       children: [
         Container(
-          padding: const EdgeInsets.all(2),
-          height: 26,
-          width: 26,
+          padding: EdgeInsets.all(
+            Screen.getProportionateScreenWidth(
+              context,
+              2,
+            ),
+          ),
+          height: Screen.getProportionateScreenHeight(
+            context,
+            26,
+          ),
+          width: Screen.getProportionateScreenHeight(
+            context,
+            26,
+          ),
           decoration: const BoxDecoration(
             color: Color.fromRGBO(
               73,
@@ -73,10 +85,13 @@ class _DiscountTimerState extends State<DiscountTimer> {
           child: Center(
             child: Text(
               hours,
-              style: const TextStyle(
+              style: TextStyle(
                 color: Colors.white,
                 fontWeight: FontWeight.w500,
-                fontSize: 15,
+                fontSize: Screen.getProportionateScreenHeight(
+                  context,
+                  15,
+                ),
               ),
             ),
           ),
@@ -100,9 +115,20 @@ class _DiscountTimerState extends State<DiscountTimer> {
           ),
         ),
         Container(
-          padding: const EdgeInsets.all(2),
-          height: 26,
-          width: 26,
+          padding: EdgeInsets.all(
+            Screen.getProportionateScreenWidth(
+              context,
+              2,
+            ),
+          ),
+          height: Screen.getProportionateScreenHeight(
+            context,
+            26,
+          ),
+          width: Screen.getProportionateScreenHeight(
+            context,
+            26,
+          ),
           decoration: const BoxDecoration(
             color: Color.fromRGBO(
               73,
@@ -119,10 +145,13 @@ class _DiscountTimerState extends State<DiscountTimer> {
           child: Center(
             child: Text(
               minutes,
-              style: const TextStyle(
+              style: TextStyle(
                 color: Colors.white,
                 fontWeight: FontWeight.w500,
-                fontSize: 15,
+                fontSize: Screen.getProportionateScreenHeight(
+                  context,
+                  15,
+                ),
               ),
             ),
           ),
@@ -146,9 +175,20 @@ class _DiscountTimerState extends State<DiscountTimer> {
           ),
         ),
         Container(
-          padding: const EdgeInsets.all(2),
-          height: 26,
-          width: 26,
+          padding: EdgeInsets.all(
+            Screen.getProportionateScreenWidth(
+              context,
+              2,
+            ),
+          ),
+          height: Screen.getProportionateScreenHeight(
+            context,
+            26,
+          ),
+          width: Screen.getProportionateScreenHeight(
+            context,
+            26,
+          ),
           decoration: const BoxDecoration(
             color: Color.fromRGBO(
               73,
@@ -165,10 +205,13 @@ class _DiscountTimerState extends State<DiscountTimer> {
           child: Center(
             child: Text(
               seconds,
-              style: const TextStyle(
+              style: TextStyle(
                 color: Colors.white,
                 fontWeight: FontWeight.w500,
-                fontSize: 15,
+                fontSize: Screen.getProportionateScreenHeight(
+                  context,
+                  15,
+                ),
               ),
             ),
           ),
