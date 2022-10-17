@@ -1,5 +1,6 @@
 import 'package:consumer_app/app/data/models/models.dart';
 import 'package:consumer_app/app/module/binding/binding.dart';
+import 'package:consumer_app/app/module/screen/dynamic_form.screen.dart';
 import 'package:consumer_app/app/module/screen/screen.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -16,7 +17,7 @@ class AppRoutes {
     ),
     GetPage(
       name: '/main',
-      page: () => const MainScreen(),
+      page: () => const DynamicForm(),
       binding: MainBinding(),
     ),
     GetPage(

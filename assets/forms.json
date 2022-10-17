@@ -1,0 +1,14 @@
+
+{
+    "title": "Game of Thrones fans",
+    "description" : "A simple form to register GOT fans",
+    "type": "object",
+    "required": ["firstname","email", "tos"],
+    "properties":[
+      {"type": "string", "title": "First Name", "default": "Jon" , "required": "true", "id": "firstName"},
+      {"type": "string", "title": "Last Name",  "required": "false",  "id": "lastName"},
+     {"type": "string", "title": "Email", "default": "jon.snow@got.com", "required": "true",  "id": "email"},
+      {"type": "boolean", "title": "I agree not to spoil anyone", "default": false,  "required": "true",  "id": "tos"}
+    ]
+    
+  }
